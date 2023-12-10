@@ -4,6 +4,14 @@ body {
     color: #333;
     line-height: 1.6em;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    width: 50%;
+    margin-bottom: 20px;
 }
 
 h1, h2 {
@@ -22,6 +30,8 @@ h2 {
 ul {
     list-style: none;
     padding: 0;
+    text-align: left;
+    width: 50%;
 }
 
 ul li {
