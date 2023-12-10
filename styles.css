@@ -10,8 +10,8 @@ body {
 }
 
 img {
-    width: 50%;
-    margin-bottom: 20px;
+    width: 20px; 
+    height: auto; 
 }
 
 h1, h2 {
