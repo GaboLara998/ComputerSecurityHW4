@@ -10,32 +10,50 @@ body {
 }
 
 img {
-    width: 100px; 
-    height: auto; }
-
-h1, h2 {
-    color: #333;
-    line-height: 1.2em;
+    width: 120px; 
+    height: auto; 
 }
 
 h1 {
+    color: #333;
+    text-align: center;
     font-size: 2.5em;
 }
 
 h2 {
+    color: #333;
+    text-align: left;
     font-size: 2.0em;
+    width: 100%;
 }
+
+h3, h4 {
+    font-size: 1.75em;
+    text-align: left;
+    margin-left: 20px;
+}
+
+h5 {
+    font-size: 1.25em;
+    text-align: left !important;
+    width: 100%;
+    margin-left: 0;
+}
+
+
 
 ul {
-    list-style: none;
+    list-style-type: disc;
     padding: 0;
     text-align: left;
-    width: 50%;
+    width: 100%;
 }
 
-ul li {
+ul li div {
     background: #e8e8e8;
     padding: 10px;
     margin-bottom: 10px;
     box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.1);
+    width: auto;
+    display: inline-block;
 }
