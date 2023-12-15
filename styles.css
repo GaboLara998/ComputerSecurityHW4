@@ -1,20 +1,44 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6em;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* font-family: Arial, sans-serif; */
+    /* background-color: #f4f4f4; */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    /* color: #333; */
+    /* line-height: 1.6em; */
+    /* padding: 30px; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    font-family: 'Noto Sans', sans-serif;
+    
 }
 
-img {
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #e5e5f7;
+    opacity: 0.1;
+    background-image:  linear-gradient(#00a9ff 8px, transparent 8px), linear-gradient(90deg, #00a9ff 8px, transparent 8px), linear-gradient(#00a9ff 4px, transparent 4px), linear-gradient(90deg, #00a9ff 4px, #e5e5f7 4px);
+    background-size: 200px 200px, 200px 200px, 40px 40px, 40px 40px;
+    background-position: -8px -8px, -8px -8px, -4px -4px, -4px -4px;
+
+}
+.usfq-logo {
     width: 120px; 
     height: auto; 
+    margin: 25px;
 }
 
-h1 {
+.full-width {
+    width: 100%;
+}
+
+/* h1 {
     color: #333;
     text-align: center;
     font-size: 2.5em;
@@ -38,11 +62,11 @@ h5 {
     text-align: left !important;
     width: 100%;
     margin-left: 0;
-}
+} */
 
 
 
-ul {
+/* ul {
     list-style-type: disc;
     padding: 0;
     text-align: left;
@@ -56,4 +80,6 @@ ul li div {
     box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.1);
     width: auto;
     display: inline-block;
-}
+} */
+
+
