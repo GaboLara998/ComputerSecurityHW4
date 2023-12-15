@@ -40,108 +40,180 @@
       <h2 class="my-4">1. Block Diagram of the System Components:</h2>
       <h3>Requirements and Functionality:</h3>
 
-      <div class="mx-5">
-        <h4 class="mt-4">Functional Requirements</h4>
-        <div class="px-4">
-          <h5>Customers</h5>
-          <ul>
-            <li>
-              <strong>Ride Request:</strong> Input pickup and destination
-              locations to request a ride. The system notifies nearby drivers of
-              the request, allowing them to accept the ride.
-            </li>
-            <li>
-              <strong>Real-Time Tracking:</strong> Once a driver accepts the
-              ride, track their current location in real-time.
-            </li>
-            <li>
-              <strong>Driver Communication:</strong> Facilitate communication
-              with the driver for coordination or specific instructions as
-              needed.
-            </li>
-          </ul>
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseOne"
+              aria-expanded="true"
+              aria-controls="panelsStayOpen-collapseOne"
+            >
+              Functional Requirements
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseOne"
+            class="accordion-collapse collapse show"
+          >
+            <div class="accordion-body">
+              <h5>Customers</h5>
+              <ul>
+                <li>
+                  <strong>Ride Request:</strong> Input pickup and destination
+                  locations to request a ride. The system notifies nearby
+                  drivers of the request, allowing them to accept the ride.
+                </li>
+                <li>
+                  <strong>Real-Time Tracking:</strong> Once a driver accepts the
+                  ride, track their current location in real-time.
+                </li>
+                <li>
+                  <strong>Driver Communication:</strong> Facilitate
+                  communication with the driver for coordination or specific
+                  instructions as needed.
+                </li>
+              </ul>
 
-          <h5>Drivers</h5>
-          <ul>
-            <li>
-              <strong>Ride Requests:</strong> Accept or decline customer ride
-              requests.
-            </li>
-            <li>
-              <strong>Navigation:</strong> Use system for customer location and
-              destination directions.
-            </li>
-            <li>
-              <strong>Trip Management:</strong> Mark trips as complete at
-              destinations.
-            </li>
-          </ul>
+              <h5>Drivers</h5>
+              <ul>
+                <li>
+                  <strong>Ride Requests:</strong> Accept or decline customer
+                  ride requests.
+                </li>
+                <li>
+                  <strong>Navigation:</strong> Use system for customer location
+                  and destination directions.
+                </li>
+                <li>
+                  <strong>Trip Management:</strong> Mark trips as complete at
+                  destinations.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseTwo"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseTwo"
+            >
+              Non-Functional Requirements
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseTwo"
+            class="accordion-collapse collapse"
+          >
+            <div class="accordion-body">
+              <ul>
+                <li>
+                  <strong
+                    >System Reliability, Availability, and Scalability:</strong
+                  >
+                  Ensure the system is robust, consistently available with
+                  minimal latency, and capable of handling increased demand
+                  efficiently.
+                </li>
+                <li>
+                  <strong>Data Security:</strong> Implement robust security
+                  measures to protect user data, including credit card
+                  information, travel routes, and personal details. Ensure
+                  compliance with data protection regulations.
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <h4 class="mt-4">Non-Functional Requirements</h4>
-
-        <div class="px-4">
-          <ul>
-            <li>
-              <strong
-                >System Reliability, Availability, and Scalability:</strong
-              >
-              Ensure the system is robust, consistently available with minimal
-              latency, and capable of handling increased demand efficiently.
-            </li>
-            <li>
-              <strong>Data Security:</strong> Implement robust security measures
-              to protect user data, including credit card information, travel
-              routes, and personal details. Ensure compliance with data
-              protection regulations.
-            </li>
-          </ul>
-        </div>
-        <h4 class="mt-4">Extended Requirements</h4>
-
-        <div class="px-4">
-          <ul>
-            <li>
-              <strong>Ride Rating:</strong> Option for customers to rate trips
-              and drivers, providing valuable feedback for service improvement
-              and driver assessment.
-            </li>
-            <li>
-              <strong>Payment Processing:</strong> Integration of a secure
-              payment system to handle transactions smoothly and safely.
-            </li>
-            <li>
-              <strong>Analytics for Advertising:</strong> Collection and
-              analysis of data to not only improve service performance but also
-              to optimize targeted advertising, enhancing revenue opportunities
-              and user experience.
-            </li>
-          </ul>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Extended Requirements
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+          >
+            <div class="accordion-body">
+              <ul>
+                <li>
+                  <strong>Ride Rating:</strong> Option for customers to rate
+                  trips and drivers, providing valuable feedback for service
+                  improvement and driver assessment.
+                </li>
+                <li>
+                  <strong>Payment Processing:</strong> Integration of a secure
+                  payment system to handle transactions smoothly and safely.
+                </li>
+                <li>
+                  <strong>Analytics for Advertising:</strong> Collection and
+                  analysis of data to not only improve service performance but
+                  also to optimize targeted advertising, enhancing revenue
+                  opportunities and user experience.
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <h4 class="mt-4">Additions and Modifications</h4>
-
-        <div class="px-4">
-          <ul>
-            <li>
-              <strong>User Verification:</strong> Enhance safety through
-              identity verification.
-            </li>
-            <li>
-              <strong>Customer Support:</strong> System for issue resolution and
-              complaints handling.
-            </li>
-            <li>
-              <strong>Real-Time Integration:</strong> Optimize routes using
-              traffic data.
-            </li>
-            <li>
-              <strong>Preference Management:</strong> User settings for future
-              trip preferences.
-            </li>
-          </ul>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseFour"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseFour"
+            >
+              Additions and Modifications
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseFour"
+            class="accordion-collapse collapse"
+          >
+            <div class="accordion-body">
+              <ul>
+                <li>
+                  <strong>User Verification:</strong> Enhance safety through
+                  identity verification.
+                </li>
+                <li>
+                  <strong>Customer Support:</strong> System for issue resolution
+                  and complaints handling.
+                </li>
+                <li>
+                  <strong>Real-Time Integration:</strong> Optimize routes using
+                  traffic data.
+                </li>
+                <li>
+                  <strong>Preference Management:</strong> User settings for
+                  future trip preferences.
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
+
+      
     </div>
 
     <!-- Link Bootstrap JS and Popper.js -->
