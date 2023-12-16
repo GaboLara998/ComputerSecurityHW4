@@ -39,12 +39,12 @@
         <li class="list-inline-item">Gabriel Lara (00215784)</li>
       </ul>
 
-      <h2 class="my-4">1. Block Diagram of the System Components:</h2>
+      <h1 class="my-4 text-center">Block Diagram of the System Components</h1>
       <div class="block-diagram-containter">
         <img src="resources/Block-Diagram.svg" class="block-diagram" />
       </div>
-      
-      <h3>Requirements and Functionality:</h3>
+
+      <h1 class="my-4 text-center">Requirements and Functionality</h1>
 
       <div class="accordion" id="accordionPanelsStayOpenExample">
         <div class="accordion-item">
@@ -101,10 +101,15 @@
               <h5>Security Enhancements</h5>
               <ul>
                 <li>
-                  <strong>Authentication and Authorization:</strong> Implement a robust authentication system for users, administrators, and developers. This includes two-factor authentication for enhanced security.
+                  <strong>Authentication and Authorization:</strong> Implement a
+                  robust authentication system for users, administrators, and
+                  developers. This includes two-factor authentication for
+                  enhanced security.
                 </li>
                 <li>
-                  <strong>Data Encryption:</strong> Encrypt all sensitive data, both in transit and at rest, to protect user information and financial transactions.
+                  <strong>Data Encryption:</strong> Encrypt all sensitive data,
+                  both in transit and at rest, to protect user information and
+                  financial transactions.
                 </li>
               </ul>
             </div>
@@ -184,15 +189,22 @@
                   opportunities and user experience.
                 </li>
                 <li>
-                  <strong>Data to be Sold:</strong> Travel preferences, location history, demographic data. Personal and financial details are excluded.
+                  <strong>Data to be Sold:</strong> Travel preferences, location
+                  history, demographic data. Personal and financial details are
+                  excluded.
                 </li>
                 <li>
-                  <strong>Penetration Testing and Vulnerability Assessment:</strong> Conduct regular tests to identify and mitigate potential security vulnerabilities.
+                  <strong
+                    >Penetration Testing and Vulnerability Assessment:</strong
+                  >
+                  Conduct regular tests to identify and mitigate potential
+                  security vulnerabilities.
                 </li>
                 <li>
-                  <strong>Consequences of a Privacy Breach:</strong> Damage to the company's reputation, loss of user trust, potential legal and financial implications.
+                  <strong>Consequences of a Privacy Breach:</strong> Damage to
+                  the company's reputation, loss of user trust, potential legal
+                  and financial implications.
                 </li>
-                
               </ul>
             </div>
           </div>
@@ -234,7 +246,9 @@
                   future trip preferences.
                 </li>
                 <li>
-                  <strong>Ethical Analysis of Data Selling:</strong> Consider the privacy implications and the potential negative impact on user perception.
+                  <strong>Ethical Analysis of Data Selling:</strong> Consider
+                  the privacy implications and the potential negative impact on
+                  user perception.
                 </li>
               </ul>
             </div>
@@ -242,8 +256,372 @@
         </div>
       </div>
 
-    </div>
+      <h1 class="my-4 text-center">What data do we need? Why?</h1>
 
+      <p class="text-justify">
+        It is important to consider the point of view of two types of users for
+        this app. First, the clients appear here as the most important, and then
+        the drivers that work for the app.
+      </p>
+      <h5>Rides or Trips (Activity)</h5>
+      <p class="text-justify">
+        Then, for the users, the app should have the next requirements at least:
+      </p>
+      <ul>
+        <li class="text-justify">
+          Each cab in the zone, close to the client, should be available or
+          shown in the map of the app, also the prices for a ride and arrival
+          time (estimated).
+        </li>
+        <li class="text-justify">
+          Each user must have the availability to book a cab, and the type of a
+          cab, with the available prices for each type.
+        </li>
+        <li class="text-justify">
+          In the same way, users should have the availability to cancel a ride,
+          during the time the cab is going to pick the client (If a cab arrived
+          this option should not the able to apply when the client gets in the
+          cab).
+        </li>
+      </ul>
+      <h5>Device location (user’s case)</h5>
+      <p class="text-justify">
+        In that way, the device location is necessary. This is important because
+        the point of having the location enabled helps the app to look for
+        drivers close to the zone, and it could notify one of them that there is
+        a client that needs a ride.
+      </p>
+      <h5>S2 (id cells for location)</h5>
+      <p class="text-justify">
+        For this, there is the problem that longitude and latitude are not
+        enough or not as good to determine a good potential to give the client a
+        good experience. Then, there was an implementation done in Google, due
+        to the spherical condition of the earth. S2 could be used here mainly to
+        divide the map into cells, and each cell representing an area of the
+        earth with an id.
+      </p>
+      <img
+        src="resources/S2_implementation.jpg"
+        class="rounded mx-auto d-block"
+      />
+
+      <p class="text-center figure-anotation my-0">
+        Figure 1: A wide view of the S2 library in the globe map.
+      </p>
+      <p class="text-center figure-anotation my-0">Source: S2Geometry</p>
+
+      <p class="text-justify">
+        Then, the app also needs the id of a cell in a map, this is helpful to
+        let the app know to the user, and also to a driver, for a client or
+        driver close to it. Consider this, a client could enter the app, and the
+        he/she could see for close drivers in the zone. The point for this is
+        that the S2 library that could be applied here let the system look for a
+        driver, the cell id and its location insider that cell.
+      </p>
+      <p class="text-justify">
+        The match or definition of close users is considered when in the system
+        a N km circle is defined on a specific cell, and then the system takes
+        to list of the cells ids that are inside the area of the circle. With a
+        list of that, the location of a driver could be related with a cell, and
+        if that is true it is shown in the screen of the app.
+      </p>
+
+      <img
+        src="resources/client_area_encircleling.png"
+        class="rounded mx-auto d-block"
+      />
+
+      <p class="text-center figure-anotation my-0">
+        Figure 2: Cell selection in a defined area.
+      </p>
+      <p class="text-center figure-anotation my-0">Source: Radar</p>
+
+      <h5>Focus on the client data – Ride request</h5>
+      <p class="text-justify">
+        Although the client information could not be the main focus always for
+        the good functionality, the input data of this that should be necessary
+        for operate the app is the next one:
+      </p>
+      <ul>
+        <li class="text-justify">
+          Device location (previously mentioned), to define the position of the
+          client on the map on real-time. This is helpful for the drivers to
+          look for close clients in a zone, and then consider to accept or not a
+          ride.
+        </li>
+        <li class="text-justify">
+          The cab type, like a small car or a bus. This could be essential for a
+          better experience and to keep in a ride more than one person if it
+          could be the case.
+        </li>
+        <li class="text-justify">
+          Type of payment, which is necessary to look for the from in which the
+          driver will receive the money of if there will be a digital method
+          applied.
+        </li>
+      </ul>
+      <h5>Focus on the driver data – Ride request</h5>
+      <p class="text-justify">
+        The driver information should be the most important here, because the
+        driver is the person with more exposed information to operate the app.
+        In that way, the driver is responsible to give the next data:
+      </p>
+      <ul>
+        <li class="text-justify">
+          Personal data, like the name, cell phone, mail, personal photo, bank
+          account. This is essential for its payment for doing the job, but also
+          to show the driver aspects to the client.
+        </li>
+        <li class="text-justify">
+          Rides done, although this is applied by the system to the clients by
+          the driver.
+        </li>
+        <li class="text-justify">
+          Vehicle credentials. For the vehicle credentials, the vehicle
+          registration, the vehicle model, the vehicle color and visual aspects.
+          This is necessary to avoid any kind of assaults or stealing for the
+          client, considering the possibility of an impostor or a driver that
+          tried to alter the ride process.
+        </li>
+        <li class="text-justify">
+          Driver location, in order to know where is he/she located in the map,
+          then to help the driver and the client to know the distance between
+          them and how close could be the driver to the client.
+        </li>
+      </ul>
+
+      <h5>Client risks</h5>
+      <p class="text-justify">
+        This case is more relevant for the client, which is considered the main
+        focus. Then, the point of providing this information, and mainly the
+        majority to the client, is to help him/her to identify the driver car
+        for the ride.
+      </p>
+
+      <img
+        src="resources/driver_data_for_app.jpg"
+        class="rounded mx-auto d-block"
+      />
+
+      <p class="text-center figure-anotation my-0">
+        Figure 3: Driver information interface.
+      </p>
+      <p class="text-center figure-anotation my-0">Source: Uber</p>
+
+      <p class="text-justify">
+        Also, the driver location is important for an emergency, of there is an
+        assault for instance, to let the corresponding authorities to act and
+        identify the aggressor.
+      </p>
+
+      <h5>Matchmaking management</h5>
+
+      <p class="text-justify">
+        As it was mentioned before, the device location is necessary not just
+        for the client, it is necessary for the driver also. Then the location
+        helps more the operation of matching a client with a driver for a ride.
+      </p>
+
+      <p class="text-justify">
+        The point of this is that the driver could get a notification of clients
+        close to him/her in the zone. The driver can accept or decline a request
+        for a ride of a client, and the matching will be working then for both:
+        client and driver.
+      </p>
+
+      <p class="text-justify">
+        For this, it is necessary a system to make the matching process, like a
+        dispatch system. This system will need the map routes and GPS data or
+        device location data, so the client and driver devices should allow the
+        app to access their location.
+      </p>
+
+      <p class="text-justify">
+        For the drivers, the information should be divided in two parts:
+        latitude and longitude, to set their positions on the map. In the same
+        form it should occur for the clients, to help the driver to locate them
+        and also to help the clients to look for drivers.
+      </p>
+
+      <h5>Dispatch system functionality</h5>
+      <p class="text-justify">
+        The implementation of a driver service is applied first, to keep the
+        location of the driver updated. Then, the idea is that the driver
+        location is sent each time every n second, where n could iterate
+        supposedly through the 3 to 9 minutes.
+      </p>
+      <p class="text-justify">
+        Then, the data location is stored in a database, where it is updated,
+        each time is possible. Consider that the last location of a cab is taken
+        to put it in the screen and then to filter the drivers in a circle
+        radius, defined for a client for close drivers.
+      </p>
+      <p class="text-justify">
+        Then, when a driver is updated with location and a client in the same
+        way, the system should assign each one in a region, or a defined area in
+        a cell. When a region or space of a cell is inside an area, mainly the
+        driver could get a ride for a client that made a request.
+      </p>
+      <p class="text-justify">
+        For this, a web socket is needed, mainly to keep connection through the
+        app with the client and the driver., and constantly get the location
+        data updated. IN another hand, as the management of a high volume of
+        information will be present, there should be a division between servers,
+        mainly for different regions or cities, to distribute the matching and
+        locations in different places to avoid time spent problems.
+      </p>
+
+      <img
+        src="resources/gossip_protocol.png"
+        class="rounded mx-auto d-block"
+      />
+
+      <p class="text-center figure-anotation my-0">
+        Figure 4: Gossip protocol implementation.
+      </p>
+      <p class="text-center figure-anotation my-0">Source: LinkedIn</p>
+
+
+      <p class="text-justify">
+        A gossip protocol is needed then, to communicate servers between them
+        and let each one of them know the other’s information. This could be
+        helpful to reduce or increase the number of servers. Then, considering
+        each server or region (as a server implies a region or a group of cells
+        in a map), a driver or client could find the other connecting through
+        servers in the dispatch system.
+      </p>
+
+      <img
+        src="resources/Cell-to-region-definition-use-case-diagram.svg"
+        class="rounded mx-auto d-block"
+      />
+
+      <p class="text-center figure-anotation my-0">
+        Figure 5: Cell relation with region, for dispatch system.
+      </p>
+      <p class="text-center figure-anotation my-0">Source: StarUML</p>
+
+      <p class="text-justify">
+        As an example, when a client requests for a ride, then the cell where
+        he/she stays a circular area is created around. Then, the cells inside
+        the area are requested by the client cell server, to another server
+        where the other cells are saved. In that case, if there is a driver in
+        one of those cells, the driver gets the request for a ride by that
+        client, then he/she accepts or declines.
+      </p>
+
+      <img
+        src="resources/Dispatch-matchmaking-system-usa-case-diagram.svg"
+        class="rounded mx-auto d-block"
+      />
+
+      <p class="text-center figure-anotation my-0">
+        Figure 6: Dispatch system diagram, for a use case.
+      </p>
+      <p class="text-center figure-anotation my-0">Source: StarUML</p>
+
+      <h5>Filtering data</h5>
+
+      <p class="text-justify">
+        However, the information provided by a driver could vary on different
+        aspects, like personal data and location, and sometimes the information
+        or request inserted in a system could be malicious. In that case, there
+        are element needed to get the most important information.
+      </p>
+      <p class="text-justify">
+        In that case, a firewall would be the first lawyer for input data, to
+        avoid malicious requests or inputs, like a SQL inject with the objective
+        to get stored data of the system. Then a classifier to move each data to
+        a specific area to be processed. In that way, the point is the provide a
+        safe environment and organized for the information.
+      </p>
+
+      <p class="text-justify">
+        Then, when the classifier throws each data component to the respective
+        section, for the REST interface, to move data resources through the app,
+        for data analysis and storage, and finally for a web sockets node for
+        dispatch system for matchmaking (information should be sent in an
+        asynchronous way). Consider a case where we can use Kafka for the data
+        center.
+      </p>
+
+      <img
+        src="resources/Filtering-data-system-diagram.svg"
+        class="rounded mx-auto d-block"
+      />
+
+      <p class="text-center figure-anotation my-0">
+        Figure 7: Data filtering system.
+      </p>
+      <p class="text-center figure-anotation my-0">Source: StarUML</p>
+
+
+      <p class="text-justify">
+        Then, the point of the classifier, when there is a lot of information,
+        is to distribute the traffic of the data, in order to manage it in
+        different ways, like DNS for it. That case of a classifier should be of
+        a load balancer, and it applied to manage the large amount of
+        information that enters inside the app. Then a balancer could be
+        effective to reduce response time or avoiding overload in the server,
+        helping to give a better experience to the clients and drivers.
+      </p>
+
+      <h5>Arrival time (estimated)</h5>
+
+      <p class="text-justify">
+        The importance of the location of each client in the app, and the
+        drivers, is necessary or a better experience. Here, the locations of
+        each driver are analyzed in the system, applying not just Euclidean
+        distance, maybe the Manhattan distance could be on of the most important
+        methods to look for the nest driver in the zone.
+      </p>
+      <p class="text-justify">
+        However, for this is necessary also the road system data, and the
+        traffic data in the city or place where the client is located. This is
+        helpful because it lets the driver look for the best route to get with
+        the client, and also it lets the system to know how much time each cab
+        could have to get with the client.
+      </p>
+
+      <img
+        src="resources/NY_road_system.jpg"
+        class="rounded mx-auto d-block"
+      />
+
+      <p class="text-center figure-anotation my-0">
+        Figure 8: New York road system sample.
+      </p>
+      <p class="text-center figure-anotation my-0">Source: Mapsland</p>
+
+      <p class="text-justify">
+        Then, there should taken in count mainly the drivers which are free or
+        close to finish a ride. Then, the driver status is an important kind for
+        information, principally to reduce the waiting time for a driver. Next
+        to that, the free drivers have better priority, then the drivers close
+        to finish their rides, which could be analyzed by the distance between
+        the driver position to its destiny.
+      </p>
+      <p class="text-justify">
+        When the estimated time is applied for a driver when it accepts to move
+        a client to its destiny, many factors are considered then. Some of them
+        could be the climate condition, traffic in the zone, transit signals,
+        and some others. However, when a driver goes through the streets of a
+        city, he/she can act effectively on his/her way. Based on that, the
+        experience, as it is all the cases out of this situation, helps to
+        understand the time expected that a driver could take to move to the
+        client place. In fact, the historical travel times are important for the
+        client, to give him/her the idea of how much time it is necessary to
+        wait for the driver.
+      </p>
+      <p class="text-justify">
+        The travel time could be stored in the data center, in order that the
+        section of that then could be used by an algorithm to define not just
+        the best route, it also helps to understand how much time will be spent
+        to go from a place to another. An example of that could be with the
+        Dijkstra’s algorithm, considering each route weighted by the time spent
+        in previous trips.
+      </p>
+    </div>
     <!-- Link Bootstrap JS-->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
