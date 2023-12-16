@@ -42,6 +42,14 @@ body {
     height: auto;
 }
 
+.max-width {
+    max-width: 100%;
+    height: auto;
+}
+
+.threefifty-height{
+    height: 350px;
+}
 .figure-anotation{
     color: rgb(0, 115, 255);
     font-style: italic;
