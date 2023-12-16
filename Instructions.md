@@ -36,3 +36,4 @@ For this homework, you will work in groups of 5 people. You are expected to incl
 - You have been asked to loosen up your design so that data can be sold to advertisers. Additionally, your manager has asked you to provide a list of data that can be sold, so the advertisers can maximize the accuracy of the ads. 
 - Provide the details of the new privacy design following the same principles you used for the original design.
 - Repeat the pen-tester exercise done for the original design. 
+- Write an ethical analysis of the consequences of selling this data to adverstisers. 
