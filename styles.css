@@ -1,16 +1,8 @@
 body {
-    /* font-family: Arial, sans-serif; */
-    /* background-color: #f4f4f4; */
     width: 100%;
     margin: 0;
     padding: 0;
     padding-bottom: 100px;
-    /* color: #333; */
-    /* line-height: 1.6em; */
-    /* padding: 30px; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
     font-family: 'Noto Sans', sans-serif;
     
 }
@@ -33,6 +25,16 @@ body {
     width: 120px; 
     height: auto; 
     margin: 25px;
+}
+
+.block-diagram{
+    width: 100%;
+    height: auto;
+}
+.block-diagram-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .full-width {
