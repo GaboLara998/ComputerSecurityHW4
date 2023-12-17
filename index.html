@@ -17,9 +17,27 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    
   </head>
   <body>
     <div class="background"></div>
+
+    <nav id="navbar-example2" class="navbar navbar-light bg-light px-3  fixed-top">
+      <a class="navbar-brand" href="#">Back to top</a>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="#Data">Data</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Privacy">Privacy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Pentesting">Pentesting</a>
+        </li>
+        
+      </ul>
+    </nav>
+    
 
     <div
       class="container d-flex flex-column align-items-center justify-content-center"
@@ -256,7 +274,7 @@
         </div>
       </div>
 
-      <div id="section-2">
+      <div id="Data">
         <h1 class="my-4 text-center">What data do we need? Why?</h1>
         <div class="paper-container">
           <p class="text-justify">
@@ -645,7 +663,7 @@
         </div>
       </div>
 
-      <div id="section-3">
+      <div id="Privacy">
         <h1 class="my-4 text-center">Data Privacy</h1>
         <div class="paper-container">
           <p class="text-justify">
@@ -1041,6 +1059,11 @@
           </p>
         </div>
       </div>
+
+      <div id="Pentesting">
+        <div class="paper-container"><h3>pentesting</h3></div>
+        
+      </div>
     </div>
     <!-- Link Bootstrap JS-->
     <script
@@ -1048,5 +1071,25 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function() {
+        // Adjust scroll position when clicking on navbar links
+        $('a.nav-link').on('click', function(event) {
+          event.preventDefault();
+    
+          var target = $(this.getAttribute('href'));
+          if (target.length) {
+            $('html, body').stop().animate({
+              scrollTop: target.offset().top - 60 // Adjusted for the navbar height
+            }, 10);
+          }
+        });
+      });
+    </script>
+    
   </body>
 </html>
