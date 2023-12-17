@@ -22,10 +22,7 @@
   <body>
     <div class="background"></div>
 
-    <nav
-      id="navbar"
-      class="navbar navbar-light bg-light px-3 fixed-top"
-    >
+    <nav id="navbar" class="navbar navbar-light bg-light px-3 fixed-top">
       <a class="navbar-brand" href="#">Back to top</a>
       <ul class="nav nav-pills">
         <li class="nav-item">
@@ -37,17 +34,23 @@
         <li class="nav-item">
           <a class="nav-link" href="#Pentesting">Pentesting</a>
         </li>
+        <li style="opacity: 0;">___________</li>
+        <li class="nav-item">
+          <a class="nav-link" href="#RepeatingPentesting">Repeating Pentesting</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Ethical">Ethical</a>
+        </li>
       </ul>
     </nav>
 
-    <div
-      class="container d-flex flex-column align-items-center justify-content-center"
-    >
-      <img src="resources/usfq-logo.png" class="usfq-logo" alt="---" />
-      <h1>Homework 4: Privacy</h1>
-    </div>
-
     <div class="container-sm">
+      <div
+        class="container d-flex flex-column align-items-center justify-content-center"
+      >
+        <img src="resources/usfq-logo.png" class="usfq-logo" alt="---laosdg" />
+        <h1>Homework 4: Privacy</h1>
+      </div>
       <h2>Members:</h2>
 
       <ul class="list-inline">
@@ -57,225 +60,241 @@
         <li class="list-inline-item">Guillermo Cisneros (00206286)</li>
         <li class="list-inline-item">Gabriel Lara (00215784)</li>
       </ul>
+    </div>
 
-      <h1 class="my-4 text-center">Block Diagram of the System Components</h1>
-      <div class="block-diagram-containter paper-container">
-        <img src="resources/Block-Diagram.svg" class="block-diagram" alt="---" />
-      </div>
+    <div
+      data-bs-spy="scroll"
+      data-bs-target="#navbar"
+      data-bs-offset="0"
+      tabindex="0"
+    >
+      <div class="container-sm">
+        <h1>
+          Part 1: Design the system components of a drive sharing application
+          (ex: Uber, Lyft). Specify what elements are necessary for this
+          application to work.
+        </h1>
+        <h1 class="my-4 text-center">Block Diagram of the System Components</h1>
+        <div class="block-diagram-containter paper-container">
+          <img
+            src="resources/Block-Diagram.svg"
+            class="block-diagram"
+            alt="---gaddg"
+          />
+        </div>
 
-      <h1 class="my-4 text-center">Requirements and Functionality</h1>
+        <h1 class="my-4 text-center">Requirements and Functionality</h1>
 
-      <div class="accordion" id="accordionPanelsStayOpenExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseOne"
-              aria-expanded="true"
-              aria-controls="panelsStayOpen-collapseOne"
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseOne"
+                aria-expanded="true"
+                aria-controls="panelsStayOpen-collapseOne"
+              >
+                Functional Requirements
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseOne"
+              class="accordion-collapse collapse"
             >
-              Functional Requirements
-            </button>
-          </h2>
-          <div
-            id="panelsStayOpen-collapseOne"
-            class="accordion-collapse collapse"
-          >
-            <div class="accordion-body">
-              <h5>Customers</h5>
-              <ul>
-                <li>
-                  <strong>Ride Request:</strong> Input pickup and destination
-                  locations to request a ride. The system notifies nearby
-                  drivers of the request, allowing them to accept the ride.
-                </li>
-                <li>
-                  <strong>Real-Time Tracking:</strong> Once a driver accepts the
-                  ride, track their current location in real-time.
-                </li>
-                <li>
-                  <strong>Driver Communication:</strong> Facilitate
-                  communication with the driver for coordination or specific
-                  instructions as needed.
-                </li>
-              </ul>
+              <div class="accordion-body">
+                <h5>Customers</h5>
+                <ul>
+                  <li>
+                    <strong>Ride Request:</strong> Input pickup and destination
+                    locations to request a ride. The system notifies nearby
+                    drivers of the request, allowing them to accept the ride.
+                  </li>
+                  <li>
+                    <strong>Real-Time Tracking:</strong> Once a driver accepts
+                    the ride, track their current location in real-time.
+                  </li>
+                  <li>
+                    <strong>Driver Communication:</strong> Facilitate
+                    communication with the driver for coordination or specific
+                    instructions as needed.
+                  </li>
+                </ul>
 
-              <h5>Drivers</h5>
-              <ul>
-                <li>
-                  <strong>Ride Requests:</strong> Accept or decline customer
-                  ride requests.
-                </li>
-                <li>
-                  <strong>Navigation:</strong> Use system for customer location
-                  and destination directions.
-                </li>
-                <li>
-                  <strong>Trip Management:</strong> Mark trips as complete at
-                  destinations.
-                </li>
-              </ul>
-              <h5>Security Enhancements</h5>
-              <ul>
-                <li>
-                  <strong>Authentication and Authorization:</strong> Implement a
-                  robust authentication system for users, administrators, and
-                  developers. This includes two-factor authentication for
-                  enhanced security.
-                </li>
-                <li>
-                  <strong>Data Encryption:</strong> Encrypt all sensitive data,
-                  both in transit and at rest, to protect user information and
-                  financial transactions.
-                </li>
-              </ul>
+                <h5>Drivers</h5>
+                <ul>
+                  <li>
+                    <strong>Ride Requests:</strong> Accept or decline customer
+                    ride requests.
+                  </li>
+                  <li>
+                    <strong>Navigation:</strong> Use system for customer
+                    location and destination directions.
+                  </li>
+                  <li>
+                    <strong>Trip Management:</strong> Mark trips as complete at
+                    destinations.
+                  </li>
+                </ul>
+                <h5>Security Enhancements</h5>
+                <ul>
+                  <li>
+                    <strong>Authentication and Authorization:</strong> Implement
+                    a robust authentication system for users, administrators,
+                    and developers. This includes two-factor authentication for
+                    enhanced security.
+                  </li>
+                  <li>
+                    <strong>Data Encryption:</strong> Encrypt all sensitive
+                    data, both in transit and at rest, to protect user
+                    information and financial transactions.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseTwo"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseTwo"
+              >
+                Non-Functional Requirements
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseTwo"
+              class="accordion-collapse collapse"
+            >
+              <div class="accordion-body">
+                <ul>
+                  <li>
+                    <strong
+                      >System Reliability, Availability, and
+                      Scalability:</strong
+                    >
+                    Ensure the system is robust, consistently available with
+                    minimal latency, and capable of handling increased demand
+                    efficiently.
+                  </li>
+                  <li>
+                    <strong>Data Security:</strong> Implement robust security
+                    measures to protect user data, including credit card
+                    information, travel routes, and personal details. Ensure
+                    compliance with data protection regulations.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree"
+              >
+                Extended Requirements
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseThree"
+              class="accordion-collapse collapse"
+            >
+              <div class="accordion-body">
+                <ul>
+                  <li>
+                    <strong>Ride Rating:</strong> Option for customers to rate
+                    trips and drivers, providing valuable feedback for service
+                    improvement and driver assessment.
+                  </li>
+                  <li>
+                    <strong>Payment Processing:</strong> Integration of a secure
+                    payment system to handle transactions smoothly and safely.
+                  </li>
+                  <li>
+                    <strong>Analytics for Advertising:</strong> Collection and
+                    analysis of data to not only improve service performance but
+                    also to optimize targeted advertising, enhancing revenue
+                    opportunities and user experience.
+                  </li>
+                  <li>
+                    <strong>Data to be Sold:</strong> Travel preferences,
+                    location history, demographic data. Personal and financial
+                    details are excluded.
+                  </li>
+                  <li>
+                    <strong
+                      >Penetration Testing and Vulnerability Assessment:</strong
+                    >
+                    Conduct regular tests to identify and mitigate potential
+                    security vulnerabilities.
+                  </li>
+                  <li>
+                    <strong>Consequences of a Privacy Breach:</strong> Damage to
+                    the company's reputation, loss of user trust, potential
+                    legal and financial implications.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseFour"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseFour"
+              >
+                Additions and Modifications
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseFour"
+              class="accordion-collapse collapse"
+            >
+              <div class="accordion-body">
+                <ul>
+                  <li>
+                    <strong>User Verification:</strong> Enhance safety through
+                    identity verification.
+                  </li>
+                  <li>
+                    <strong>Customer Support:</strong> System for issue
+                    resolution and complaints handling.
+                  </li>
+                  <li>
+                    <strong>Real-Time Integration:</strong> Optimize routes
+                    using traffic data.
+                  </li>
+                  <li>
+                    <strong>Preference Management:</strong> User settings for
+                    future trip preferences.
+                  </li>
+                  <li>
+                    <strong>Ethical Analysis of Data Selling:</strong> Consider
+                    the privacy implications and the potential negative impact
+                    on user perception.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseTwo"
-              aria-expanded="false"
-              aria-controls="panelsStayOpen-collapseTwo"
-            >
-              Non-Functional Requirements
-            </button>
-          </h2>
-          <div
-            id="panelsStayOpen-collapseTwo"
-            class="accordion-collapse collapse"
-          >
-            <div class="accordion-body">
-              <ul>
-                <li>
-                  <strong
-                    >System Reliability, Availability, and Scalability:</strong
-                  >
-                  Ensure the system is robust, consistently available with
-                  minimal latency, and capable of handling increased demand
-                  efficiently.
-                </li>
-                <li>
-                  <strong>Data Security:</strong> Implement robust security
-                  measures to protect user data, including credit card
-                  information, travel routes, and personal details. Ensure
-                  compliance with data protection regulations.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseThree"
-              aria-expanded="false"
-              aria-controls="panelsStayOpen-collapseThree"
-            >
-              Extended Requirements
-            </button>
-          </h2>
-          <div
-            id="panelsStayOpen-collapseThree"
-            class="accordion-collapse collapse"
-          >
-            <div class="accordion-body">
-              <ul>
-                <li>
-                  <strong>Ride Rating:</strong> Option for customers to rate
-                  trips and drivers, providing valuable feedback for service
-                  improvement and driver assessment.
-                </li>
-                <li>
-                  <strong>Payment Processing:</strong> Integration of a secure
-                  payment system to handle transactions smoothly and safely.
-                </li>
-                <li>
-                  <strong>Analytics for Advertising:</strong> Collection and
-                  analysis of data to not only improve service performance but
-                  also to optimize targeted advertising, enhancing revenue
-                  opportunities and user experience.
-                </li>
-                <li>
-                  <strong>Data to be Sold:</strong> Travel preferences, location
-                  history, demographic data. Personal and financial details are
-                  excluded.
-                </li>
-                <li>
-                  <strong
-                    >Penetration Testing and Vulnerability Assessment:</strong
-                  >
-                  Conduct regular tests to identify and mitigate potential
-                  security vulnerabilities.
-                </li>
-                <li>
-                  <strong>Consequences of a Privacy Breach:</strong> Damage to
-                  the company's reputation, loss of user trust, potential legal
-                  and financial implications.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseFour"
-              aria-expanded="false"
-              aria-controls="panelsStayOpen-collapseFour"
-            >
-              Additions and Modifications
-            </button>
-          </h2>
-          <div
-            id="panelsStayOpen-collapseFour"
-            class="accordion-collapse collapse"
-          >
-            <div class="accordion-body">
-              <ul>
-                <li>
-                  <strong>User Verification:</strong> Enhance safety through
-                  identity verification.
-                </li>
-                <li>
-                  <strong>Customer Support:</strong> System for issue resolution
-                  and complaints handling.
-                </li>
-                <li>
-                  <strong>Real-Time Integration:</strong> Optimize routes using
-                  traffic data.
-                </li>
-                <li>
-                  <strong>Preference Management:</strong> User settings for
-                  future trip preferences.
-                </li>
-                <li>
-                  <strong>Ethical Analysis of Data Selling:</strong> Consider
-                  the privacy implications and the potential negative impact on
-                  user perception.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0">
         <div id="Data">
           <h1 class="my-4 text-center">What data do we need? Why?</h1>
           <div class="paper-container">
@@ -329,7 +348,7 @@
             <img
               src="resources/S2_implementation.jpg"
               class="rounded mx-auto d-block max-width"
-              alt="---"
+              alt="---da"
             />
 
             <p class="text-center figure-anotation my-0">
@@ -358,7 +377,7 @@
             <img
               src="resources/client_area_encircleling.png"
               class="rounded mx-auto d-block max-width"
-              alt="---"
+              alt="---fgs"
             />
 
             <p class="text-center figure-anotation my-0">
@@ -436,7 +455,7 @@
             <img
               src="resources/driver_data_for_app.jpg"
               class="rounded mx-auto d-block max-width threefifty-height"
-              alt="---"
+              alt="---ghh"
             />
 
             <p class="text-center figure-anotation my-0">
@@ -516,7 +535,7 @@
             <img
               src="resources/gossip_protocol.png"
               class="rounded mx-auto d-block max-width threefifty-height"
-              alt="---"
+              alt="---sdfh"
             />
 
             <p class="text-center figure-anotation my-0">
@@ -536,7 +555,7 @@
             <img
               src="resources/Cell-to-region-definition-use-case-diagram.svg"
               class="rounded mx-auto d-block max-width"
-              alt="---"
+              alt="---asdgh"
             />
 
             <p class="text-center figure-anotation my-0">
@@ -557,7 +576,7 @@
             <img
               src="resources/Dispatch-matchmaking-system-usa-case-diagram.svg"
               class="rounded mx-auto d-block max-width"
-              alt="---"
+              alt="---losd"
             />
 
             <p class="text-center figure-anotation my-0">
@@ -596,7 +615,7 @@
             <img
               src="resources/Filtering-data-system-diagram.svg"
               class="rounded mx-auto d-block max-width"
-              alt="---"
+              alt="---tda"
             />
 
             <p class="text-center figure-anotation my-0">
@@ -637,7 +656,7 @@
             <img
               src="resources/NY_road_system.jpg"
               class="rounded mx-auto d-block max-width threefifty-height"
-              alt="---"
+              alt="---tasfg"
             />
 
             <p class="text-center figure-anotation my-0">
@@ -765,7 +784,7 @@
             <img
               src="resources/Payment-system-diagram.svg"
               class="rounded mx-auto d-block max-width threefifty-height"
-              alt="---"
+              alt="---asdgh"
             />
 
             <p class="text-center figure-anotation my-0">
@@ -1298,7 +1317,7 @@
             <img
               src="resources/Imperva´s-framework.jpeg"
               class="rounded mx-auto d-block max-width threefifty-height"
-              alt="---"
+              alt="--lias"
             />
             <p class="text-center figure-anotation my-0">
               Figure 10: Imperva's Penetration Testing Framework.
@@ -1550,9 +1569,20 @@
               </li>
             </ul>
           </div>
+        </div>
 
+        <h1>
+          Part 2: Your drive sharing company has decided to sell users data to
+          advertisers.
+        </h1>
+        
+        <div id="RepeatingPentesting">
+          <h1 class="my-4 text-center">Repeating Pentesting</h1>
+        </div>
+        
+        <div id="Ethical">
+          <h1 class="my-4 text-center">Ethical Analysis</h1>
           <div class="paper-container">
-            <h5>Ethical Analysis</h5>
             <p class="justify-text">
               The following analysis is based on a new data protection law
               proposed by the Ecuadorian government in 2021, in which specifies
