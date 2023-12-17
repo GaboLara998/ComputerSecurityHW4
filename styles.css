@@ -74,12 +74,10 @@ body {
     text-align: justify;
 }
 
-.my-navbar {
-    display: none !important;
-  }
-  
+
+
 @media only screen and (max-width: 1000px) {
     .my-navbar {
-      display: hidden;
+      display: none !important;
     }
   }
