@@ -17,12 +17,14 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    
   </head>
   <body>
     <div class="background"></div>
 
-    <nav id="navbar-example2" class="navbar navbar-light bg-light px-3  fixed-top">
+    <nav
+      id="navbar-example2"
+      class="navbar navbar-light bg-light px-3 fixed-top"
+    >
       <a class="navbar-brand" href="#">Back to top</a>
       <ul class="nav nav-pills">
         <li class="nav-item">
@@ -34,10 +36,8 @@
         <li class="nav-item">
           <a class="nav-link" href="#Pentesting">Pentesting</a>
         </li>
-        
       </ul>
     </nav>
-    
 
     <div
       class="container d-flex flex-column align-items-center justify-content-center"
@@ -692,23 +692,25 @@
             IDP is the organizational understanding to manage privacy risk for
             individuals arising from data processing.
           </p>
-          <p class="text-justify">
-            Inventory and Mapping (ID.IM-P) category: specifies that data
-            processed by systems, products, or services must be understood. This
-            task was already done previously. Risk Assessment (ID.RA-P)
-            category: business has to understand the privacy risks to
-            individuals and how such privacy risks may create follow-on impacts
-            on organizational operations, including mission, functions, other
-            risk management priorities (e.g., compliance, financial),
-            reputation, workforce, and culture.
-          </p>
-          <p class="text-justify">
-            On ID.RA-P we're going to identify the contextual factors related to
-            the systems / products / services and the data actions (e.g.,
-            individuals’ demographics and privacy interests or perceptions, data
-            sensitivity and/or types, visibility of data processing to
-            individuals and third parties).
-          </p>
+          <ul>
+            <li class="text-justify">
+              Inventory and Mapping (ID.IM-P) category: specifies that data
+              processed by systems, products, or services must be understood.
+              This task was already done previously. Risk Assessment (ID.RA-P)
+              category: business has to understand the privacy risks to
+              individuals and how such privacy risks may create follow-on
+              impacts on organizational operations, including mission,
+              functions, other risk management priorities (e.g., compliance,
+              financial), reputation, workforce, and culture.
+            </li>
+            <li class="text-justify">
+              On ID.RA-P we're going to identify the contextual factors related
+              to the systems / products / services and the data actions (e.g.,
+              individuals’ demographics and privacy interests or perceptions,
+              data sensitivity and/or types, visibility of data processing to
+              individuals and third parties).
+            </li>
+          </ul>
         </div>
         <div class="paper-container">
           <h5>Users</h5>
@@ -718,41 +720,53 @@
             three essential data: real- time geolocation, certain personal data
             and a payment method.
           </p>
-          <p class="text-justify">
-            User's real-time geolocation is visible for the driver that receives
-            the request, and the third- party navigation API; only while the
-            service is active. User have to accept his location data being
-            collected by the app to provide the drive-sharing service. The user
-            expects that his real-time location will not be visible beyond the
-            aforementioned elements or outside the application context.
-            Therefore this data is considered as Internal-only information.
-            User's personal data such as: name, phone number, or email, is
-            necessary for communication with the driver, customer service and
-            account creation. Both the driver and application have access to
-            this data, but not third-party elements. This is basic information
-            for service, yet the user expects that it will not be shared outside
-            the context of the application. Hence, this data is considered as
-            internal-only information.
-          </p>
-          <p class="text-justify">
-            User's payment method is used to pay both the driver and the
-            application's commission for the service. Neither the application,
-            nor the drivers, nor any third parties have access to this
-            information, only user. The application only ensures this data
-            remains secure and intact. Due to the serious damage that a possible
-            leakage of this information could cause to users and the company's
-            reputation, this data is considered as restricted.
-          </p>
-          <p class="text-justify">
-            Additionally, users will have the option of rating driver's service
-            to enhance the user experience and provide a driver assessment. This
-            data will be visible by others users when they request a ride to a
-            specific driver. This information is not considered sensitive, but
-            rather acts as an indicator of the driver's performance which is
-            helpful for users to have a good experience. Still, this should only
-            be shared within the context of the application. So, this data is
-            considered as internal-only.
-          </p>
+          <ul>
+            <li>
+              <p class="text-justify">
+                User's real-time geolocation is visible for the driver that
+                receives the request, and the third- party navigation API; only
+                while the service is active. User have to accept his location
+                data being collected by the app to provide the drive-sharing
+                service. The user expects that his real-time location will not
+                be visible beyond the aforementioned elements or outside the
+                application context. Therefore this data is considered as
+                <strong>Internal-only</strong> information. User's personal data
+                such as: name, phone number, or email, is necessary for
+                communication with the driver, customer service and account
+                creation. Both the driver and application have access to this
+                data, but not third-party elements. This is basic information
+                for service, yet the user expects that it will not be shared
+                outside the context of the application. Hence, this data is
+                considered as <strong>internal-only</strong>
+                information.
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                User's payment method is used to pay both the driver and the
+                application's commission for the service. Neither the
+                application, nor the drivers, nor any third parties have access
+                to this information, only user. The application only ensures
+                this data remains secure and intact. Due to the serious damage
+                that a possible leakage of this information could cause to users
+                and the company's reputation, this data is considered as
+                <strong>restricted.</strong>
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                Additionally, users will have the option of rating driver's
+                service to enhance the user experience and provide a driver
+                assessment. This data will be visible by others users when they
+                request a ride to a specific driver. This information is not
+                considered sensitive, but rather acts as an indicator of the
+                driver's performance which is helpful for users to have a good
+                experience. Still, this should only be shared within the context
+                of the application. So, this data is considered as
+                <strong>internal-only.</strong>
+              </p>
+            </li>
+          </ul>
         </div>
         <div class="paper-container">
           <h5>Drivers</h5>
@@ -761,47 +775,61 @@
             provide three essential data: real- time geolocation, certain
             personal data, savings account, and car information.
           </p>
-          <p class="text-justify">
-            Driver's real-time geolocation is visible for the nearest users and
-            the third-party navigation API for navigation functionalities; only
-            when the service is active. Driver have to accept his location data
-            being collected by the app to provide the drive-sharing service. The
-            application will use third-party navigation functionalities to find
-            the shorter route between the user and the destiny, pick up user
-            wherever he is, and calculate route costs. Driver expects that his
-            real-time location will not be visible beyond the aforementioned
-            elements or outside the application context. Therefore this data is
-            considered as Internal-only information.
-          </p>
-          <p class="text-justify">
-            Driver's personal data such as: name, phone number, or email, is
-            necessary for communication with the user, service desk, and account
-            creation. Both the user and application have access to this data,
-            but not third-party elements. This is basic information for service,
-            yet the driver expects that it will not be shared outside the
-            context of the application. Hence, this data is considered as
-            internal-only information.
-          </p>
-          <p class="text-justify">
-            Driver's savings account is used to receive his corresponding
-            payment for the service provided, less application's commission.
-            Neither the application, nor the users, nor any third parties have
-            access to this information, only driver. Application only ensures
-            this data remains secure and intact. Due to the serious damage that
-            a possible leakage of this information could cause to drivers and
-            the company's reputation, this data is considered as restricted.
-          </p>
-          <p class="text-justify">
-            Driver's car information is used by the application to validate the
-            vehicle credentials for security issues. For user confidence, they
-            will have access to this data to (1) recognize easily the vehicle
-            where he's going to ride, and (2) ensure he is on the right car. As
-            mentioned, application will also have access to this data for
-            validation purposes. Third- party elements can't see this
-            information. Driver expects this data will not be visible beyond the
-            aforementioned elements or outside the application context.
-            Therefore, this data is considered as internal-only information.
-          </p>
+          <ul>
+            <li>
+              <p class="text-justify">
+                Driver's real-time geolocation is visible for the nearest users
+                and the third-party navigation API for navigation
+                functionalities; only when the service is active. Driver have to
+                accept his location data being collected by the app to provide
+                the drive-sharing service. The application will use third-party
+                navigation functionalities to find the shorter route between the
+                user and the destiny, pick up user wherever he is, and calculate
+                route costs. Driver expects that his real-time location will not
+                be visible beyond the aforementioned elements or outside the
+                application context. Therefore this data is considered as
+                <strong>Internal-only</strong> information.
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                Driver's personal data such as: name, phone number, or email, is
+                necessary for communication with the user, service desk, and
+                account creation. Both the user and application have access to
+                this data, but not third-party elements. This is basic
+                information for service, yet the driver expects that it will not
+                be shared outside the context of the application. Hence, this
+                data is considered as
+                <strong>internal-only</strong> information.
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                Driver's savings account is used to receive his corresponding
+                payment for the service provided, less application's commission.
+                Neither the application, nor the users, nor any third parties
+                have access to this information, only driver. Application only
+                ensures this data remains secure and intact. Due to the serious
+                damage that a possible leakage of this information could cause
+                to drivers and the company's reputation, this data is considered
+                as <strong>restricted.</strong>
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                Driver's car information is used by the application to validate
+                the vehicle credentials for security issues. For user
+                confidence, they will have access to this data to (1) recognize
+                easily the vehicle where he's going to ride, and (2) ensure he
+                is on the right car. As mentioned, application will also have
+                access to this data for validation purposes. Third- party
+                elements can't see this information. Driver expects this data
+                will not be visible beyond the aforementioned elements or
+                outside the application context. Therefore, this data is
+                considered as <strong>internal-only</strong> information.
+              </p>
+            </li>
+          </ul>
         </div>
         <h3>2. GOVERN-P (GV-P)</h3>
         <div class="paper-container">
@@ -830,49 +858,61 @@
             law. The law specifies some mandatory policies for any company that
             handles personal data:
           </p>
-          <p class="text-justify">
-            The processing of personal data carried out by third parties must be
-            regulated by a contract, in which it is clearly and precisely
-            established that the person in charge of the processing of personal
-            data will only process them according to the instructions of the
-            person in charge and that he/she will not use them for purposes
-            other than those indicated in the contract, nor will he/she transfer
-            or communicate them, not even for their conservation to other
-            persons.
-          </p>
-          <p class="text-justify">
-            The person responsible for or in charge of the processing of
-            personal data must implement a process of verification, evaluation
-            and continuous and permanent assessment of the efficiency, efficacy
-            and effectiveness of the technical, organizational and any other
-            type of measures implemented with the purpose of guaranteeing and
-            improving the security of the processing of personal data. personal
-            data.
-          </p>
-          <p class="text-justify">
-            The controller shall carry out an impact assessment of the
-            processing of personal data when it has identified the likelihood
-            that such processing, by its nature, context or purposes, involves a
-            high risk to the rights and freedoms of the data subject or when
-            required by the Personal Data Protection Authority, context or
-            purposes, entails a high risk to the rights and freedoms of the data
-            subject or when the Personal Data Protection Authority so requires.
-          </p>
-          <p class="text-justify">
-            The controller shall notify the personal data security breach to the
-            Personal Data Protection Authority and the Telecommunications
-            Regulation and Control Agency as soon as possible, and at the latest
-            within the term of the breach. Control of Telecommunications, as
-            soon as possible, and at the latest within five (5) days after
-            becoming aware of the five (5) days after becoming aware of it,
-            unless it is unlikely that such security breach constitutes a breach
-            of personal data. that such breach of security constitutes a risk to
-            the rights and freedoms of natural persons. natural persons. If the
-            notification to the Data Protection Authority does not take place
-            within five (5) days after the breach has come to the attention of
-            the Data Protection Authority (5) days, it shall be accompanied by
-            an indication of the reasons for the delay.
-          </p>
+          <ul>
+            <li>
+              <p class="text-justify">
+                The processing of personal data carried out by third parties
+                must be regulated by a contract, in which it is clearly and
+                precisely established that the person in charge of the
+                processing of personal data will only process them according to
+                the instructions of the person in charge and that he/she will
+                not use them for purposes other than those indicated in the
+                contract, nor will he/she transfer or communicate them, not even
+                for their conservation to other persons.
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                The person responsible for or in charge of the processing of
+                personal data must implement a process of verification,
+                evaluation and continuous and permanent assessment of the
+                efficiency, efficacy and effectiveness of the technical,
+                organizational and any other type of measures implemented with
+                the purpose of guaranteeing and improving the security of the
+                processing of personal data. personal data.
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                The controller shall carry out an impact assessment of the
+                processing of personal data when it has identified the
+                likelihood that such processing, by its nature, context or
+                purposes, involves a high risk to the rights and freedoms of the
+                data subject or when required by the Personal Data Protection
+                Authority, context or purposes, entails a high risk to the
+                rights and freedoms of the data subject or when the Personal
+                Data Protection Authority so requires.
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                The controller shall notify the personal data security breach to
+                the Personal Data Protection Authority and the
+                Telecommunications Regulation and Control Agency as soon as
+                possible, and at the latest within the term of the breach.
+                Control of Telecommunications, as soon as possible, and at the
+                latest within five (5) days after becoming aware of the five (5)
+                days after becoming aware of it, unless it is unlikely that such
+                security breach constitutes a breach of personal data. that such
+                breach of security constitutes a risk to the rights and freedoms
+                of natural persons. natural persons. If the notification to the
+                Data Protection Authority does not take place within five (5)
+                days after the breach has come to the attention of the Data
+                Protection Authority (5) days, it shall be accompanied by an
+                indication of the reasons for the delay.
+              </p>
+            </li>
+          </ul>
         </div>
         <div class="paper-container">
           <h5>PCI DSS</h5>
@@ -892,92 +932,113 @@
             a safer payment system:
           </p>
           <p class="text-justify">
-            Understand your payment system. The application's payment page is
-            the form used to collect our customer’s payment card data after they
-            have decided to purchase the drive-sharing service. Handling of card
-            data may be 1) managed exclusively by the merchant using a shopping
-            cart or payment application, 2) partially managed by the merchant
-            with the support of a third party using a variety of methods, or 3)
-            wholly outsourced to a third party. Most times, using a wholly
-            outsourced third party is the safest option; and it is important to
-            make sure they are a PCI DSS validated third party.
+            <strong>Understand your payment system.</strong> The application's
+            payment page is the form used to collect our customer’s payment card
+            data after they have decided to purchase the drive-sharing service.
+            Handling of card data may be 1) managed exclusively by the merchant
+            using a shopping cart or payment application, 2) partially managed
+            by the merchant with the support of a third party using a variety of
+            methods, or 3) wholly outsourced to a third party. Most times, using
+            a wholly outsourced third party is the safest option; and it is
+            important to make sure they are a PCI DSS validated third party.
           </p>
           <p class="text-justify">
-            Protect your business. Start protecting your business with these
-            security basics:
+            <strong>Protect your business.</strong> Start protecting your
+            business with these security basics:
           </p>
-          <p class="text-justify">
-            Use strong passwords and change default ones. (a) Is suggested to
-            change passwords every three months. (b) The most common passwords
-            are “password” and “123456.”
-          </p>
-          <p class="text-justify">
-            Hackers try easily-guessed passwords because they’re used by half of
-            all people. A strong password has seven or more characters and a
-            combination of upper and lower case letters, numbers, and symbols
-            (like !@#$&). A phrase can also be a strong password (and may be
-            easier to remember), like “B1gMac&frieS”. (c) Insist on each
-            employee having their own login IDs and passwords.
-          </p>
-          <p class="text-justify">
-            Protect card data and only store what you need. (a) The best way to
-            protect against data breaches is not to store card data at all.
-            Consider outsourcing your card processing to a PCI DSS compliant
-            service provider. (b) Securely destroy/shred card data you don’t
-            need. (c) Rather than accepting payment details via email, ask
-            customers to provide it via phone, fax, or regular mail.
-          </p>
-          <p class="text-justify">
-            Install patches from your vendors. (a) You may get patches from
-            vendors of your payment terminal, payment applications, other
-            payment systems (tills, cash registers, PCs, etc.), operating
-            systems (Android, Windows, iOS, etc.), application software
-            (including your web browser), and business software. Make sure your
-            vendors update your payment terminals, operating systems, etc. so
-            they can support the latest security patches. (b) Installing patches
-            as soon as possible is very important. Software can have flaws that
-            are discovered after release, caused by mistakes made by programmers
-            when they wrote the code. These flaws are also called security
-            holes, bugs or vulnerabilities. Hackers exploit these mistakes to
-            break into your computer and steal account data. Protect your
-            systems by applying vendor-supplied “patches” to fix coding errors.
-            Timely installation of security patches is crucial.
-          </p>
-          <p class="text-justify">
-            Use anti-virus software. (a) Hackers write viruses and other
-            malicious code to exploit software features and coding mistakes, so
-            they can break into your systems and steal card data. Using
-            up-to-date anti-virus (also called anti malware) software helps to
-            protect your systems. (b) Schedule regular full system scans, since
-            your systems may have been infected by new malware that was released
-            before your anti-virus software was able to detect it.
-          </p>
-          <p class="text-justify">
-            Make data useless to criminals. (a) Data is vulnerable when it
-            travels through internet, and when it’s kept or stored on your
-            computers and devices. The best way to keep it safe is to make it
-            useless even if it’s stolen by encrypting it whenever you store it
-            or send it, and removing it altogether when it’s not needed. (b) You
-            should encrypt all card data you store or send. Make sure your
-            payment system is using encryption and/or tokenization technology.
-            If you are not sure, ask them.
-          </p>
-          <p class="text-justify">
-            Protect the business from the internet. (a) The Internet is the main
-            highway used by data thieves to attack and steal your customers’
-            card data. For this reason, if your business is on the Internet,
-            anything you use for card payments needs extra protection. A
-            firewall is equipment or software that sits between your payment
-            system and the Internet. It acts as a barrier to keep traffic out of
-            your network and systems that you don’t want and didn’t authorize.
-            Firewalls are configured (in hardware, software, or both) with
-            specific criteria to block or prevent unauthorized access to a
-            network. A properly configured firewall acts as a buffer to keep
-            hackers and malicious software from getting access to your payment
-            systems, your e-commerce website, and/or your card data. Check with
-            your payment terminal vendor or service provider to make sure you
-            have one and ask them for help configuring it correctly.
-          </p>
+          <ul>
+            <li>
+              <p class="text-justify">
+                Use strong passwords and change default ones. (a) Is suggested
+                to change passwords every three months. (b) The most common
+                passwords are “password” and “123456.”
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                Hackers try easily-guessed passwords because they’re used by
+                half of all people. A strong password has seven or more
+                characters and a combination of upper and lower case letters,
+                numbers, and symbols (like !@#$&). A phrase can also be a strong
+                password (and may be easier to remember), like “B1gMac&frieS”.
+                (c) Insist on each employee having their own login IDs and
+                passwords.
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                Protect card data and only store what you need. (a) The best way
+                to protect against data breaches is not to store card data at
+                all. Consider outsourcing your card processing to a PCI DSS
+                compliant service provider. (b) Securely destroy/shred card data
+                you don’t need. (c) Rather than accepting payment details via
+                email, ask customers to provide it via phone, fax, or regular
+                mail.
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                Install patches from your vendors. (a) You may get patches from
+                vendors of your payment terminal, payment applications, other
+                payment systems (tills, cash registers, PCs, etc.), operating
+                systems (Android, Windows, iOS, etc.), application software
+                (including your web browser), and business software. Make sure
+                your vendors update your payment terminals, operating systems,
+                etc. so they can support the latest security patches. (b)
+                Installing patches as soon as possible is very important.
+                Software can have flaws that are discovered after release,
+                caused by mistakes made by programmers when they wrote the code.
+                These flaws are also called security holes, bugs or
+                vulnerabilities. Hackers exploit these mistakes to break into
+                your computer and steal account data. Protect your systems by
+                applying vendor-supplied “patches” to fix coding errors. Timely
+                installation of security patches is crucial.
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                Use anti-virus software. (a) Hackers write viruses and other
+                malicious code to exploit software features and coding mistakes,
+                so they can break into your systems and steal card data. Using
+                up-to-date anti-virus (also called anti malware) software helps
+                to protect your systems. (b) Schedule regular full system scans,
+                since your systems may have been infected by new malware that
+                was released before your anti-virus software was able to detect
+                it.
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                Make data useless to criminals. (a) Data is vulnerable when it
+                travels through internet, and when it’s kept or stored on your
+                computers and devices. The best way to keep it safe is to make
+                it useless even if it’s stolen by encrypting it whenever you
+                store it or send it, and removing it altogether when it’s not
+                needed. (b) You should encrypt all card data you store or send.
+                Make sure your payment system is using encryption and/or
+                tokenization technology. If you are not sure, ask them.
+              </p>
+            </li>
+            <li>
+              <p class="text-justify">
+                Protect the business from the internet. (a) The Internet is the
+                main highway used by data thieves to attack and steal your
+                customers’ card data. For this reason, if your business is on
+                the Internet, anything you use for card payments needs extra
+                protection. A firewall is equipment or software that sits
+                between your payment system and the Internet. It acts as a
+                barrier to keep traffic out of your network and systems that you
+                don’t want and didn’t authorize. Firewalls are configured (in
+                hardware, software, or both) with specific criteria to block or
+                prevent unauthorized access to a network. A properly configured
+                firewall acts as a buffer to keep hackers and malicious software
+                from getting access to your payment systems, your e-commerce
+                website, and/or your card data. Check with your payment terminal
+                vendor or service provider to make sure you have one and ask
+                them for help configuring it correctly.
+              </p>
+            </li>
+          </ul>
         </div>
 
         <h3>3.CONTROL-P (CT-P)</h3>
@@ -990,79 +1051,97 @@
             by PCI DSS, the following controls, procedures and policies will be
             applied in the application:
           </p>
-          <p class="text-justify">
-            Terms and conditions document that the user must accept at the
-            moment he creates an account in order to use the service, and,
-            consequently, to allow the collection of essential data for the
-            operation of the drive-sharing service (CT.PO-P1, CT.PO-P2).
-            Enabling user's account data preferences, configurations and the
-            right to remove his data through application functionalities
-            (CT.PO-P3).
-          </p>
-          <p class="text-justify">
-            Implement an authentication method for users and drivers using an
-            email and a password. This will allow them to create an account on
-            the application and access to the service. Allow Two-Factor
-            Authentication option for users and drivers account to enhance
-            privacy. Strong password policy for account creation process.
-            Password must have at least 7 characters, one letter in upper case,
-            one letter in under case, one number, and one special character.
-          </p>
-          <p class="text-justify">
-            Use AES encryption for the transmission of the payment made by the
-            user to the driver and the application. Deploy a Web Application
-            Firewall (WAF) on the server side to avoid attacks such as
-            Cross-Site Scripting (XSS), SQL injections, or Denial of Service
-            (DoS).
-          </p>
-          <p class="text-justify">
-            Separation of duties (SoD) principle as intern control on the
-            business. SoD is the principle that no user should be given enough
-            privileges to misuse the system on their own. This will prevent
-            fraud, errors, and other types of financial misconduct by ensuring
-            that no single employee or team has complete control over a business
-            process or function (CT.DP-P). Antivirus Software at the server and
-            network level to protect either the server and network from malware
-            that may come from the internet.
-          </p>
-          <p class="text-justify">
-            Password update policy for the employees working on the business.
-            They must update their password every three months for security
-            issues.
-          </p>
-          <p class="text-justify">
-            Perform an audit and evaluation of the company's controls, policies
-            and procedures every six months to find points of improvement and
-            strengthening of security.
-          </p>
-          <p class="text-justify">
-            Apply hashing for account passwords stored in the business database.
-            Hashing passwords provides defense against passwords being
-            compromised when a database has been compromised. It does this in
-            two ways, 1) it hides the users passwords by making it
-            computationally impossible to get the password from the hash, and 2)
-            It can slow down the generation of rainbow tables for lookup against
-            known passwords. Least privilege (PoLP) as a system and employee
-            intern control on the business. PoLP is the principle that a
-            security architecture should be designed so that each entity is
-            granted the minimum system resources and authorizations that the
-            entity needs to perform its function. PoLP will reduce the attack
-            surface and attacks such as privilege escalation when a employee,
-            user, or driver account, or even the system, is compromised
-            (CT.DP-P). Incident Response Plan (IRP) is a written document,
-            formally approved by the senior leadership team, that will help our
-            business before, during, and after a confirmed or suspected security
-            incident. This procedure is essential, because it is inevitable that
-            at some point a security incident will occur in the business. IRP
-            will clarify roles and responsibilities and will provide guidance on
-            key activities.
-          </p>
+          <ul>
+            <li class="justify-text">
+              Terms and conditions document that the user must accept at the
+              moment he creates an account in order to use the service, and,
+              consequently, to allow the collection of essential data for the
+              operation of the drive-sharing service (CT.PO-P1, CT.PO-P2).
+            </li>
+            <li class="justify-text">
+              Enabling user's account data preferences, configurations and the
+              right to remove his data through application functionalities
+              (CT.PO-P3).
+            </li>
+            <li class="justify-text">
+              Implement an authentication method for users and drivers using an
+              email and a password. This will allow them to create an account on
+              the application and access to the service.
+            </li>
+            <li class="justify-text">
+              Allow Two-Factor Authentication option for users and drivers
+              account to enhance privacy.
+            </li>
+            <li class="justify-text">
+              Strong password policy for account creation process. Password must
+              have at least 7 characters, one letter in upper case, one letter
+              in lower case, one number, and one special character.
+            </li>
+            <li class="justify-text">
+              Use AES encryption for the transmission of the payment made by the
+              user to the driver and the application.
+            </li>
+            <li class="justify-text">
+              Deploy a Web Application Firewall (WAF) on the server side to
+              avoid attacks such as Cross-Site Scripting (XSS), SQL injections,
+              or Denial of Service (DoS).
+            </li>
+            <li class="justify-text">
+              Separation of duties (SoD) principle as an internal control on the
+              business. SoD is the principle that no user should be given enough
+              privileges to misuse the system on their own. This will prevent
+              fraud, errors, and other types of financial misconduct by ensuring
+              that no single employee or team has complete control over a
+              business process or function (CT.DP-P).
+            </li>
+            <li class="justify-text">
+              Antivirus Software at the server and network level to protect
+              either the server and network from malware that may come from the
+              internet.
+            </li>
+            <li class="justify-text">
+              Password update policy for the employees working on the business.
+              They must update their password every three months for security
+              issues.
+            </li>
+            <li class="justify-text">
+              Perform an audit and evaluation of the company's controls,
+              policies and procedures every six months to find points of
+              improvement and strengthening of security.
+            </li>
+            <li class="justify-text">
+              Apply hashing for account passwords stored in the business
+              database. Hashing passwords provides defense against passwords
+              being compromised when a database has been compromised. It does
+              this in two ways, 1) it hides the user's passwords by making it
+              computationally impossible to get the password from the hash, and
+              2) It can slow down the generation of rainbow tables for lookup
+              against known passwords.
+            </li>
+            <li class="justify-text">
+              Least privilege (PoLP) as a system and employee internal control
+              on the business. PoLP is the principle that a security
+              architecture should be designed so that each entity is granted the
+              minimum system resources and authorizations that the entity needs
+              to perform its function. PoLP will reduce the attack surface and
+              attacks such as privilege escalation when an employee, user, or
+              driver account, or even the system, is compromised (CT.DP-P).
+            </li>
+            <li class="justify-text">
+              Incident Response Plan (IRP) is a written document, formally
+              approved by the senior leadership team, that will help our
+              business before, during, and after a confirmed or suspected
+              security incident. This procedure is essential because it is
+              inevitable that at some point a security incident will occur in
+              the business. IRP will clarify roles and responsibilities and will
+              provide guidance on key activities.
+            </li>
+          </ul>
         </div>
       </div>
 
       <div id="Pentesting">
         <div class="paper-container"><h3>pentesting</h3></div>
-        
       </div>
     </div>
     <!-- Link Bootstrap JS-->
@@ -1072,24 +1151,29 @@
       crossorigin="anonymous"
     ></script>
     <script
-    src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-    crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <script>
-      $(document).ready(function() {
+      $(document).ready(function () {
         // Adjust scroll position when clicking on navbar links
-        $('a.nav-link').on('click', function(event) {
+        $("a.nav-link").on("click", function (event) {
           event.preventDefault();
-    
-          var target = $(this.getAttribute('href'));
+
+          var target = $(this.getAttribute("href"));
           if (target.length) {
-            $('html, body').stop().animate({
-              scrollTop: target.offset().top - 60 // Adjusted for the navbar height
-            }, 10);
+            $("html, body")
+              .stop()
+              .animate(
+                {
+                  scrollTop: target.offset().top - 60, // Adjusted for the navbar height
+                },
+                10
+              );
           }
         });
       });
     </script>
-    
   </body>
 </html>
