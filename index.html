@@ -258,754 +258,788 @@
 
       <div id="section-2">
         <h1 class="my-4 text-center">What data do we need? Why?</h1>
+        <div class="paper-container">
+          <p class="text-justify">
+            It is important to consider the point of view of two types of users
+            for this app. First, the clients appear here as the most important,
+            and then the drivers that work for the app.
+          </p>
+          <h5>Rides or Trips (Activity)</h5>
+          <p class="text-justify">
+            Then, for the users, the app should have the next requirements at
+            least:
+          </p>
+          <ul>
+            <li class="text-justify">
+              Each cab in the zone, close to the client, should be available or
+              shown in the map of the app, also the prices for a ride and
+              arrival time (estimated).
+            </li>
+            <li class="text-justify">
+              Each user must have the availability to book a cab, and the type
+              of a cab, with the available prices for each type.
+            </li>
+            <li class="text-justify">
+              In the same way, users should have the availability to cancel a
+              ride, during the time the cab is going to pick the client (If a
+              cab arrived this option should not the able to apply when the
+              client gets in the cab).
+            </li>
+          </ul>
+        </div>
+        <div class="paper-container">
+          <h5>Device location (user’s case)</h5>
+          <p class="text-justify">
+            In that way, the device location is necessary. This is important
+            because the point of having the location enabled helps the app to
+            look for drivers close to the zone, and it could notify one of them
+            that there is a client that needs a ride.
+          </p>
+        </div>
+        <div class="paper-container">
+          <h5>S2 (id cells for location)</h5>
+          <p class="text-justify">
+            For this, there is the problem that longitude and latitude are not
+            enough or not as good to determine a good potential to give the
+            client a good experience. Then, there was an implementation done in
+            Google, due to the spherical condition of the earth. S2 could be
+            used here mainly to divide the map into cells, and each cell
+            representing an area of the earth with an id.
+          </p>
+          <img
+            src="resources/S2_implementation.jpg"
+            class="rounded mx-auto d-block max-width"
+          />
 
-        <p class="text-justify">
-          It is important to consider the point of view of two types of users
-          for this app. First, the clients appear here as the most important,
-          and then the drivers that work for the app.
-        </p>
-        <h5>Rides or Trips (Activity)</h5>
-        <p class="text-justify">
-          Then, for the users, the app should have the next requirements at
-          least:
-        </p>
-        <ul>
-          <li class="text-justify">
-            Each cab in the zone, close to the client, should be available or
-            shown in the map of the app, also the prices for a ride and arrival
-            time (estimated).
-          </li>
-          <li class="text-justify">
-            Each user must have the availability to book a cab, and the type of
-            a cab, with the available prices for each type.
-          </li>
-          <li class="text-justify">
-            In the same way, users should have the availability to cancel a
-            ride, during the time the cab is going to pick the client (If a cab
-            arrived this option should not the able to apply when the client
-            gets in the cab).
-          </li>
-        </ul>
-        <h5>Device location (user’s case)</h5>
-        <p class="text-justify">
-          In that way, the device location is necessary. This is important
-          because the point of having the location enabled helps the app to look
-          for drivers close to the zone, and it could notify one of them that
-          there is a client that needs a ride.
-        </p>
-        <h5>S2 (id cells for location)</h5>
-        <p class="text-justify">
-          For this, there is the problem that longitude and latitude are not
-          enough or not as good to determine a good potential to give the client
-          a good experience. Then, there was an implementation done in Google,
-          due to the spherical condition of the earth. S2 could be used here
-          mainly to divide the map into cells, and each cell representing an
-          area of the earth with an id.
-        </p>
-        <img
-          src="resources/S2_implementation.jpg"
-          class="rounded mx-auto d-block max-width"
-        />
+          <p class="text-center figure-anotation my-0">
+            Figure 1: A wide view of the S2 library in the globe map.
+          </p>
+          <p class="text-center figure-anotation my-0">Source: S2Geometry</p>
 
-        <p class="text-center figure-anotation my-0">
-          Figure 1: A wide view of the S2 library in the globe map.
-        </p>
-        <p class="text-center figure-anotation my-0">Source: S2Geometry</p>
+          <p class="text-justify">
+            Then, the app also needs the id of a cell in a map, this is helpful
+            to let the app know to the user, and also to a driver, for a client
+            or driver close to it. Consider this, a client could enter the app,
+            and the he/she could see for close drivers in the zone. The point
+            for this is that the S2 library that could be applied here let the
+            system look for a driver, the cell id and its location insider that
+            cell.
+          </p>
+          <p class="text-justify">
+            The match or definition of close users is considered when in the
+            system a N km circle is defined on a specific cell, and then the
+            system takes to list of the cells ids that are inside the area of
+            the circle. With a list of that, the location of a driver could be
+            related with a cell, and if that is true it is shown in the screen
+            of the app.
+          </p>
 
-        <p class="text-justify">
-          Then, the app also needs the id of a cell in a map, this is helpful to
-          let the app know to the user, and also to a driver, for a client or
-          driver close to it. Consider this, a client could enter the app, and
-          the he/she could see for close drivers in the zone. The point for this
-          is that the S2 library that could be applied here let the system look
-          for a driver, the cell id and its location insider that cell.
-        </p>
-        <p class="text-justify">
-          The match or definition of close users is considered when in the
-          system a N km circle is defined on a specific cell, and then the
-          system takes to list of the cells ids that are inside the area of the
-          circle. With a list of that, the location of a driver could be related
-          with a cell, and if that is true it is shown in the screen of the app.
-        </p>
+          <img
+            src="resources/client_area_encircleling.png"
+            class="rounded mx-auto d-block max-width"
+          />
 
-        <img
-          src="resources/client_area_encircleling.png"
-          class="rounded mx-auto d-block max-width"
-        />
+          <p class="text-center figure-anotation my-0">
+            Figure 2: Cell selection in a defined area.
+          </p>
+          <p class="text-center figure-anotation my-0">Source: Radar</p>
+        </div>
+        <div class="paper-container">
+          <h5>Focus on the client data – Ride request</h5>
+          <p class="text-justify">
+            Although the client information could not be the main focus always
+            for the good functionality, the input data of this that should be
+            necessary for operate the app is the next one:
+          </p>
+          <ul>
+            <li class="text-justify">
+              Device location (previously mentioned), to define the position of
+              the client on the map on real-time. This is helpful for the
+              drivers to look for close clients in a zone, and then consider to
+              accept or not a ride.
+            </li>
+            <li class="text-justify">
+              The cab type, like a small car or a bus. This could be essential
+              for a better experience and to keep in a ride more than one person
+              if it could be the case.
+            </li>
+            <li class="text-justify">
+              Type of payment, which is necessary to look for the from in which
+              the driver will receive the money of if there will be a digital
+              method applied.
+            </li>
+          </ul>
+        </div>
+        <div class="paper-container">
+          <h5>Focus on the driver data – Ride request</h5>
+          <p class="text-justify">
+            The driver information should be the most important here, because
+            the driver is the person with more exposed information to operate
+            the app. In that way, the driver is responsible to give the next
+            data:
+          </p>
+          <ul>
+            <li class="text-justify">
+              Personal data, like the name, cell phone, mail, personal photo,
+              bank account. This is essential for its payment for doing the job,
+              but also to show the driver aspects to the client.
+            </li>
+            <li class="text-justify">
+              Rides done, although this is applied by the system to the clients
+              by the driver.
+            </li>
+            <li class="text-justify">
+              Vehicle credentials. For the vehicle credentials, the vehicle
+              registration, the vehicle model, the vehicle color and visual
+              aspects. This is necessary to avoid any kind of assaults or
+              stealing for the client, considering the possibility of an
+              impostor or a driver that tried to alter the ride process.
+            </li>
+            <li class="text-justify">
+              Driver location, in order to know where is he/she located in the
+              map, then to help the driver and the client to know the distance
+              between them and how close could be the driver to the client.
+            </li>
+          </ul>
+        </div>
+        <div class="paper-container">
+          <h5>Client risks</h5>
+          <p class="text-justify">
+            This case is more relevant for the client, which is considered the
+            main focus. Then, the point of providing this information, and
+            mainly the majority to the client, is to help him/her to identify
+            the driver car for the ride.
+          </p>
 
-        <p class="text-center figure-anotation my-0">
-          Figure 2: Cell selection in a defined area.
-        </p>
-        <p class="text-center figure-anotation my-0">Source: Radar</p>
+          <img
+            src="resources/driver_data_for_app.jpg"
+            class="rounded mx-auto d-block max-width threefifty-height"
+          />
 
-        <h5>Focus on the client data – Ride request</h5>
-        <p class="text-justify">
-          Although the client information could not be the main focus always for
-          the good functionality, the input data of this that should be
-          necessary for operate the app is the next one:
-        </p>
-        <ul>
-          <li class="text-justify">
-            Device location (previously mentioned), to define the position of
-            the client on the map on real-time. This is helpful for the drivers
-            to look for close clients in a zone, and then consider to accept or
-            not a ride.
-          </li>
-          <li class="text-justify">
-            The cab type, like a small car or a bus. This could be essential for
-            a better experience and to keep in a ride more than one person if it
-            could be the case.
-          </li>
-          <li class="text-justify">
-            Type of payment, which is necessary to look for the from in which
-            the driver will receive the money of if there will be a digital
-            method applied.
-          </li>
-        </ul>
-        <h5>Focus on the driver data – Ride request</h5>
-        <p class="text-justify">
-          The driver information should be the most important here, because the
-          driver is the person with more exposed information to operate the app.
-          In that way, the driver is responsible to give the next data:
-        </p>
-        <ul>
-          <li class="text-justify">
-            Personal data, like the name, cell phone, mail, personal photo, bank
-            account. This is essential for its payment for doing the job, but
-            also to show the driver aspects to the client.
-          </li>
-          <li class="text-justify">
-            Rides done, although this is applied by the system to the clients by
-            the driver.
-          </li>
-          <li class="text-justify">
-            Vehicle credentials. For the vehicle credentials, the vehicle
-            registration, the vehicle model, the vehicle color and visual
-            aspects. This is necessary to avoid any kind of assaults or stealing
-            for the client, considering the possibility of an impostor or a
-            driver that tried to alter the ride process.
-          </li>
-          <li class="text-justify">
-            Driver location, in order to know where is he/she located in the
-            map, then to help the driver and the client to know the distance
-            between them and how close could be the driver to the client.
-          </li>
-        </ul>
+          <p class="text-center figure-anotation my-0">
+            Figure 3: Driver information interface.
+          </p>
+          <p class="text-center figure-anotation my-0">Source: Uber</p>
 
-        <h5>Client risks</h5>
-        <p class="text-justify">
-          This case is more relevant for the client, which is considered the
-          main focus. Then, the point of providing this information, and mainly
-          the majority to the client, is to help him/her to identify the driver
-          car for the ride.
-        </p>
+          <p class="text-justify">
+            Also, the driver location is important for an emergency, of there is
+            an assault for instance, to let the corresponding authorities to act
+            and identify the aggressor.
+          </p>
+        </div>
+        <div class="paper-container">
+          <h5>Matchmaking management</h5>
 
-        <img
-          src="resources/driver_data_for_app.jpg"
-          class="rounded mx-auto d-block max-width threefifty-height"
-        />
+          <p class="text-justify">
+            As it was mentioned before, the device location is necessary not
+            just for the client, it is necessary for the driver also. Then the
+            location helps more the operation of matching a client with a driver
+            for a ride.
+          </p>
 
-        <p class="text-center figure-anotation my-0">
-          Figure 3: Driver information interface.
-        </p>
-        <p class="text-center figure-anotation my-0">Source: Uber</p>
+          <p class="text-justify">
+            The point of this is that the driver could get a notification of
+            clients close to him/her in the zone. The driver can accept or
+            decline a request for a ride of a client, and the matching will be
+            working then for both: client and driver.
+          </p>
 
-        <p class="text-justify">
-          Also, the driver location is important for an emergency, of there is
-          an assault for instance, to let the corresponding authorities to act
-          and identify the aggressor.
-        </p>
+          <p class="text-justify">
+            For this, it is necessary a system to make the matching process,
+            like a dispatch system. This system will need the map routes and GPS
+            data or device location data, so the client and driver devices
+            should allow the app to access their location.
+          </p>
 
-        <h5>Matchmaking management</h5>
+          <p class="text-justify">
+            For the drivers, the information should be divided in two parts:
+            latitude and longitude, to set their positions on the map. In the
+            same form it should occur for the clients, to help the driver to
+            locate them and also to help the clients to look for drivers.
+          </p>
+        </div>
+        <div class="paper-container">
+          <h5>Dispatch system functionality</h5>
+          <p class="text-justify">
+            The implementation of a driver service is applied first, to keep the
+            location of the driver updated. Then, the idea is that the driver
+            location is sent each time every n second, where n could iterate
+            supposedly through the 3 to 9 minutes.
+          </p>
+          <p class="text-justify">
+            Then, the data location is stored in a database, where it is
+            updated, each time is possible. Consider that the last location of a
+            cab is taken to put it in the screen and then to filter the drivers
+            in a circle radius, defined for a client for close drivers.
+          </p>
+          <p class="text-justify">
+            Then, when a driver is updated with location and a client in the
+            same way, the system should assign each one in a region, or a
+            defined area in a cell. When a region or space of a cell is inside
+            an area, mainly the driver could get a ride for a client that made a
+            request.
+          </p>
+          <p class="text-justify">
+            For this, a web socket is needed, mainly to keep connection through
+            the app with the client and the driver., and constantly get the
+            location data updated. IN another hand, as the management of a high
+            volume of information will be present, there should be a division
+            between servers, mainly for different regions or cities, to
+            distribute the matching and locations in different places to avoid
+            time spent problems.
+          </p>
 
-        <p class="text-justify">
-          As it was mentioned before, the device location is necessary not just
-          for the client, it is necessary for the driver also. Then the location
-          helps more the operation of matching a client with a driver for a
-          ride.
-        </p>
+          <img
+            src="resources/gossip_protocol.png"
+            class="rounded mx-auto d-block max-width threefifty-height"
+          />
 
-        <p class="text-justify">
-          The point of this is that the driver could get a notification of
-          clients close to him/her in the zone. The driver can accept or decline
-          a request for a ride of a client, and the matching will be working
-          then for both: client and driver.
-        </p>
+          <p class="text-center figure-anotation my-0">
+            Figure 4: Gossip protocol implementation.
+          </p>
+          <p class="text-center figure-anotation my-0">Source: LinkedIn</p>
 
-        <p class="text-justify">
-          For this, it is necessary a system to make the matching process, like
-          a dispatch system. This system will need the map routes and GPS data
-          or device location data, so the client and driver devices should allow
-          the app to access their location.
-        </p>
+          <p class="text-justify">
+            A gossip protocol is needed then, to communicate servers between
+            them and let each one of them know the other’s information. This
+            could be helpful to reduce or increase the number of servers. Then,
+            considering each server or region (as a server implies a region or a
+            group of cells in a map), a driver or client could find the other
+            connecting through servers in the dispatch system.
+          </p>
 
-        <p class="text-justify">
-          For the drivers, the information should be divided in two parts:
-          latitude and longitude, to set their positions on the map. In the same
-          form it should occur for the clients, to help the driver to locate
-          them and also to help the clients to look for drivers.
-        </p>
+          <img
+            src="resources/Cell-to-region-definition-use-case-diagram.svg"
+            class="rounded mx-auto d-block max-width"
+          />
 
-        <h5>Dispatch system functionality</h5>
-        <p class="text-justify">
-          The implementation of a driver service is applied first, to keep the
-          location of the driver updated. Then, the idea is that the driver
-          location is sent each time every n second, where n could iterate
-          supposedly through the 3 to 9 minutes.
-        </p>
-        <p class="text-justify">
-          Then, the data location is stored in a database, where it is updated,
-          each time is possible. Consider that the last location of a cab is
-          taken to put it in the screen and then to filter the drivers in a
-          circle radius, defined for a client for close drivers.
-        </p>
-        <p class="text-justify">
-          Then, when a driver is updated with location and a client in the same
-          way, the system should assign each one in a region, or a defined area
-          in a cell. When a region or space of a cell is inside an area, mainly
-          the driver could get a ride for a client that made a request.
-        </p>
-        <p class="text-justify">
-          For this, a web socket is needed, mainly to keep connection through
-          the app with the client and the driver., and constantly get the
-          location data updated. IN another hand, as the management of a high
-          volume of information will be present, there should be a division
-          between servers, mainly for different regions or cities, to distribute
-          the matching and locations in different places to avoid time spent
-          problems.
-        </p>
+          <p class="text-center figure-anotation my-0">
+            Figure 5: Cell relation with region, for dispatch system.
+          </p>
+          <p class="text-center figure-anotation my-0">Source: StarUML</p>
 
-        <img
-          src="resources/gossip_protocol.png"
-          class="rounded mx-auto d-block max-width threefifty-height"
-        />
+          <p class="text-justify">
+            As an example, when a client requests for a ride, then the cell
+            where he/she stays a circular area is created around. Then, the
+            cells inside the area are requested by the client cell server, to
+            another server where the other cells are saved. In that case, if
+            there is a driver in one of those cells, the driver gets the request
+            for a ride by that client, then he/she accepts or declines.
+          </p>
 
-        <p class="text-center figure-anotation my-0">
-          Figure 4: Gossip protocol implementation.
-        </p>
-        <p class="text-center figure-anotation my-0">Source: LinkedIn</p>
+          <img
+            src="resources/Dispatch-matchmaking-system-usa-case-diagram.svg"
+            class="rounded mx-auto d-block max-width"
+          />
 
-        <p class="text-justify">
-          A gossip protocol is needed then, to communicate servers between them
-          and let each one of them know the other’s information. This could be
-          helpful to reduce or increase the number of servers. Then, considering
-          each server or region (as a server implies a region or a group of
-          cells in a map), a driver or client could find the other connecting
-          through servers in the dispatch system.
-        </p>
+          <p class="text-center figure-anotation my-0">
+            Figure 6: Dispatch system diagram, for a use case.
+          </p>
+          <p class="text-center figure-anotation my-0">Source: StarUML</p>
+        </div>
+        <div class="paper-container">
+          <h5>Filtering data</h5>
 
-        <img
-          src="resources/Cell-to-region-definition-use-case-diagram.svg"
-          class="rounded mx-auto d-block max-width"
-        />
+          <p class="text-justify">
+            However, the information provided by a driver could vary on
+            different aspects, like personal data and location, and sometimes
+            the information or request inserted in a system could be malicious.
+            In that case, there are element needed to get the most important
+            information.
+          </p>
+          <p class="text-justify">
+            In that case, a firewall would be the first lawyer for input data,
+            to avoid malicious requests or inputs, like a SQL inject with the
+            objective to get stored data of the system. Then a classifier to
+            move each data to a specific area to be processed. In that way, the
+            point is the provide a safe environment and organized for the
+            information.
+          </p>
 
-        <p class="text-center figure-anotation my-0">
-          Figure 5: Cell relation with region, for dispatch system.
-        </p>
-        <p class="text-center figure-anotation my-0">Source: StarUML</p>
+          <p class="text-justify">
+            Then, when the classifier throws each data component to the
+            respective section, for the REST interface, to move data resources
+            through the app, for data analysis and storage, and finally for a
+            web sockets node for dispatch system for matchmaking (information
+            should be sent in an asynchronous way). Consider a case where we can
+            use Kafka for the data center.
+          </p>
 
-        <p class="text-justify">
-          As an example, when a client requests for a ride, then the cell where
-          he/she stays a circular area is created around. Then, the cells inside
-          the area are requested by the client cell server, to another server
-          where the other cells are saved. In that case, if there is a driver in
-          one of those cells, the driver gets the request for a ride by that
-          client, then he/she accepts or declines.
-        </p>
+          <img
+            src="resources/Filtering-data-system-diagram.svg"
+            class="rounded mx-auto d-block max-width"
+          />
 
-        <img
-          src="resources/Dispatch-matchmaking-system-usa-case-diagram.svg"
-          class="rounded mx-auto d-block max-width"
-        />
+          <p class="text-center figure-anotation my-0">
+            Figure 7: Data filtering system.
+          </p>
+          <p class="text-center figure-anotation my-0">Source: StarUML</p>
 
-        <p class="text-center figure-anotation my-0">
-          Figure 6: Dispatch system diagram, for a use case.
-        </p>
-        <p class="text-center figure-anotation my-0">Source: StarUML</p>
+          <p class="text-justify">
+            Then, the point of the classifier, when there is a lot of
+            information, is to distribute the traffic of the data, in order to
+            manage it in different ways, like DNS for it. That case of a
+            classifier should be of a load balancer, and it applied to manage
+            the large amount of information that enters inside the app. Then a
+            balancer could be effective to reduce response time or avoiding
+            overload in the server, helping to give a better experience to the
+            clients and drivers.
+          </p>
+        </div>
+        <div class="paper-container">
+          <h5>Arrival time (estimated)</h5>
 
-        <h5>Filtering data</h5>
+          <p class="text-justify">
+            The importance of the location of each client in the app, and the
+            drivers, is necessary or a better experience. Here, the locations of
+            each driver are analyzed in the system, applying not just Euclidean
+            distance, maybe the Manhattan distance could be on of the most
+            important methods to look for the nest driver in the zone.
+          </p>
+          <p class="text-justify">
+            However, for this is necessary also the road system data, and the
+            traffic data in the city or place where the client is located. This
+            is helpful because it lets the driver look for the best route to get
+            with the client, and also it lets the system to know how much time
+            each cab could have to get with the client.
+          </p>
 
-        <p class="text-justify">
-          However, the information provided by a driver could vary on different
-          aspects, like personal data and location, and sometimes the
-          information or request inserted in a system could be malicious. In
-          that case, there are element needed to get the most important
-          information.
-        </p>
-        <p class="text-justify">
-          In that case, a firewall would be the first lawyer for input data, to
-          avoid malicious requests or inputs, like a SQL inject with the
-          objective to get stored data of the system. Then a classifier to move
-          each data to a specific area to be processed. In that way, the point
-          is the provide a safe environment and organized for the information.
-        </p>
+          <img
+            src="resources/NY_road_system.jpg"
+            class="rounded mx-auto d-block max-width threefifty-height"
+          />
 
-        <p class="text-justify">
-          Then, when the classifier throws each data component to the respective
-          section, for the REST interface, to move data resources through the
-          app, for data analysis and storage, and finally for a web sockets node
-          for dispatch system for matchmaking (information should be sent in an
-          asynchronous way). Consider a case where we can use Kafka for the data
-          center.
-        </p>
+          <p class="text-center figure-anotation my-0">
+            Figure 8: New York road system sample.
+          </p>
+          <p class="text-center figure-anotation my-0">Source: Mapsland</p>
 
-        <img
-          src="resources/Filtering-data-system-diagram.svg"
-          class="rounded mx-auto d-block max-width"
-        />
-
-        <p class="text-center figure-anotation my-0">
-          Figure 7: Data filtering system.
-        </p>
-        <p class="text-center figure-anotation my-0">Source: StarUML</p>
-
-        <p class="text-justify">
-          Then, the point of the classifier, when there is a lot of information,
-          is to distribute the traffic of the data, in order to manage it in
-          different ways, like DNS for it. That case of a classifier should be
-          of a load balancer, and it applied to manage the large amount of
-          information that enters inside the app. Then a balancer could be
-          effective to reduce response time or avoiding overload in the server,
-          helping to give a better experience to the clients and drivers.
-        </p>
-
-        <h5>Arrival time (estimated)</h5>
-
-        <p class="text-justify">
-          The importance of the location of each client in the app, and the
-          drivers, is necessary or a better experience. Here, the locations of
-          each driver are analyzed in the system, applying not just Euclidean
-          distance, maybe the Manhattan distance could be on of the most
-          important methods to look for the nest driver in the zone.
-        </p>
-        <p class="text-justify">
-          However, for this is necessary also the road system data, and the
-          traffic data in the city or place where the client is located. This is
-          helpful because it lets the driver look for the best route to get with
-          the client, and also it lets the system to know how much time each cab
-          could have to get with the client.
-        </p>
-
-        <img
-          src="resources/NY_road_system.jpg"
-          class="rounded mx-auto d-block max-width threefifty-height"
-        />
-
-        <p class="text-center figure-anotation my-0">
-          Figure 8: New York road system sample.
-        </p>
-        <p class="text-center figure-anotation my-0">Source: Mapsland</p>
-
-        <p class="text-justify">
-          Then, there should taken in count mainly the drivers which are free or
-          close to finish a ride. Then, the driver status is an important kind
-          for information, principally to reduce the waiting time for a driver.
-          Next to that, the free drivers have better priority, then the drivers
-          close to finish their rides, which could be analyzed by the distance
-          between the driver position to its destiny.
-        </p>
-        <p class="text-justify">
-          When the estimated time is applied for a driver when it accepts to
-          move a client to its destiny, many factors are considered then. Some
-          of them could be the climate condition, traffic in the zone, transit
-          signals, and some others. However, when a driver goes through the
-          streets of a city, he/she can act effectively on his/her way. Based on
-          that, the experience, as it is all the cases out of this situation,
-          helps to understand the time expected that a driver could take to move
-          to the client place. In fact, the historical travel times are
-          important for the client, to give him/her the idea of how much time it
-          is necessary to wait for the driver.
-        </p>
-        <p class="text-justify">
-          The travel time could be stored in the data center, in order that the
-          section of that then could be used by an algorithm to define not just
-          the best route, it also helps to understand how much time will be
-          spent to go from a place to another. An example of that could be with
-          the Dijkstra’s algorithm, considering each route weighted by the time
-          spent in previous trips.
-        </p>
+          <p class="text-justify">
+            Then, there should taken in count mainly the drivers which are free
+            or close to finish a ride. Then, the driver status is an important
+            kind for information, principally to reduce the waiting time for a
+            driver. Next to that, the free drivers have better priority, then
+            the drivers close to finish their rides, which could be analyzed by
+            the distance between the driver position to its destiny.
+          </p>
+          <p class="text-justify">
+            When the estimated time is applied for a driver when it accepts to
+            move a client to its destiny, many factors are considered then. Some
+            of them could be the climate condition, traffic in the zone, transit
+            signals, and some others. However, when a driver goes through the
+            streets of a city, he/she can act effectively on his/her way. Based
+            on that, the experience, as it is all the cases out of this
+            situation, helps to understand the time expected that a driver could
+            take to move to the client place. In fact, the historical travel
+            times are important for the client, to give him/her the idea of how
+            much time it is necessary to wait for the driver.
+          </p>
+          <p class="text-justify">
+            The travel time could be stored in the data center, in order that
+            the section of that then could be used by an algorithm to define not
+            just the best route, it also helps to understand how much time will
+            be spent to go from a place to another. An example of that could be
+            with the Dijkstra’s algorithm, considering each route weighted by
+            the time spent in previous trips.
+          </p>
+        </div>
       </div>
 
       <div id="section-3">
         <h1 class="my-4 text-center">Data Privacy</h1>
-
-        <p class="text-justify">
-          Privacy by Design(PbD) is a data privacy concept that calls for the
-          incorporation of data privacy protections into the design of
-          information systems , products, and services. The goal of PbD is to
-          prevent data privacy breaches and protect the privacy of individuals
-          by proactively incorporating data privacy safeguards into systems and
-          processes. To achieve this we can rely in cybersecurity frameworks,
-          which are a set of practices and guidelines an organization implements
-          to safeguard its data and manage cybersecurity risk. The NIST Privacy
-          Framework (NPF) is a voluntary tool developed in collaboration with
-          stakeholders intended to help organizations identify and manage
-          privacy risk to build innovative products and services while
-          protecting individual's privacy.
-        </p>
-        <p class="text-justify">
-          NPF has five core functions or activities that helps organizations
-          manage their risk (we'll focus on the first three due to lack of
-          time):
-        </p>
-
+        <div class="paper-container">
+          <p class="text-justify">
+            Privacy by Design(PbD) is a data privacy concept that calls for the
+            incorporation of data privacy protections into the design of
+            information systems , products, and services. The goal of PbD is to
+            prevent data privacy breaches and protect the privacy of individuals
+            by proactively incorporating data privacy safeguards into systems
+            and processes. To achieve this we can rely in cybersecurity
+            frameworks, which are a set of practices and guidelines an
+            organization implements to safeguard its data and manage
+            cybersecurity risk. The NIST Privacy Framework (NPF) is a voluntary
+            tool developed in collaboration with stakeholders intended to help
+            organizations identify and manage privacy risk to build innovative
+            products and services while protecting individual's privacy.
+          </p>
+          <p class="text-justify">
+            NPF has five core functions or activities that helps organizations
+            manage their risk (we'll focus on the first three due to lack of
+            time):
+          </p>
+        </div>
         <h3>1. IDENTIFY-P (IDP)</h3>
+        <div class="paper-container">
+          <p class="text-justify">
+            IDP is the organizational understanding to manage privacy risk for
+            individuals arising from data processing.
+          </p>
+          <p class="text-justify">
+            Inventory and Mapping (ID.IM-P) category: specifies that data
+            processed by systems, products, or services must be understood. This
+            task was already done previously. Risk Assessment (ID.RA-P)
+            category: business has to understand the privacy risks to
+            individuals and how such privacy risks may create follow-on impacts
+            on organizational operations, including mission, functions, other
+            risk management priorities (e.g., compliance, financial),
+            reputation, workforce, and culture.
+          </p>
+          <p class="text-justify">
+            On ID.RA-P we're going to identify the contextual factors related to
+            the systems / products / services and the data actions (e.g.,
+            individuals’ demographics and privacy interests or perceptions, data
+            sensitivity and/or types, visibility of data processing to
+            individuals and third parties).
+          </p>
+        </div>
+        <div class="paper-container">
+          <h5>Users</h5>
 
-        <p class="text-justify">
-          IDP is the organizational understanding to manage privacy risk for
-          individuals arising from data processing.
-        </p>
-        <p class="text-justify">
-          Inventory and Mapping (ID.IM-P) category: specifies that data
-          processed by systems, products, or services must be understood. This
-          task was already done previously. Risk Assessment (ID.RA-P) category:
-          business has to understand the privacy risks to individuals and how
-          such privacy risks may create follow-on impacts on organizational
-          operations, including mission, functions, other risk management
-          priorities (e.g., compliance, financial), reputation, workforce, and
-          culture.
-        </p>
-        <p class="text-justify">
-          On ID.RA-P we're going to identify the contextual factors related to
-          the systems / products / services and the data actions (e.g.,
-          individuals’ demographics and privacy interests or perceptions, data
-          sensitivity and/or types, visibility of data processing to individuals
-          and third parties).
-        </p>
-
-        <h5>Users</h5>
-
-        <p class="text-justify">
-          Users are aware that, in order to use our service, they must provide
-          three essential data: real- time geolocation, certain personal data
-          and a payment method.
-        </p>
-        <p class="text-justify">
-          User's real-time geolocation is visible for the driver that receives
-          the request, and the third- party navigation API; only while the
-          service is active. User have to accept his location data being
-          collected by the app to provide the drive-sharing service. The user
-          expects that his real-time location will not be visible beyond the aforementioned
-          elements or outside the application context. Therefore this data is
-          considered as Internal-only information. User's personal data such as:
-          name, phone number, or email, is necessary for communication with the
-          driver, customer service and account creation. Both the driver and
-          application have access to this data, but not third-party elements.
-          This is basic information for service, yet the user expects that it
-          will not be shared outside the context of the application. Hence, this
-          data is considered as internal-only information.
-        </p>
-        <p class="text-justify">
-          User's payment method is used to pay both the driver and the
-          application's commission for the service. Neither the application, nor
-          the drivers, nor any third parties have access to this information,
-          only user. The application only ensures this data remains secure and
-          intact. Due to the serious damage that a possible leakage of this
-          information could cause to users and the company's reputation, this
-          data is considered as restricted.
-        </p>
-        <p class="text-justify">
-          Additionally, users will have the option of rating driver's service to
-          enhance the user experience and provide a driver assessment. This data
-          will be visible by others users when they request a ride to a specific
-          driver. This information is not considered sensitive, but rather acts
-          as an indicator of the driver's performance which is helpful for users
-          to have a good experience. Still, this should only be shared within
-          the context of the application. So, this data is considered as
-          internal-only.
-        </p>
-        <h5>Drivers</h5>
-        <p class="text-justify">
-          Drivers are aware that, in order to use our service, they must provide
-          three essential data: real- time geolocation, certain personal data,
-          savings account, and car information.
-        </p>
-        <p class="text-justify">
-          Driver's real-time geolocation is visible for the nearest users and
-          the third-party navigation API for navigation functionalities; only
-          when the service is active. Driver have to accept his location data
-          being collected by the app to provide the drive-sharing service. The
-          application will use third-party navigation functionalities to find
-          the shorter route between the user and the destiny, pick up user
-          wherever he is, and calculate route costs. Driver expects that his
-          real-time location will not be visible beyond the aforementioned
-          elements or outside the application context. Therefore this data is
-          considered as Internal-only information.
-        </p>
-        <p class="text-justify">
-          Driver's personal data such as: name, phone number, or email, is
-          necessary for communication with the user, service desk, and account
-          creation. Both the user and application have access to this data, but
-          not third-party elements. This is basic information for service, yet
-          the driver expects that it will not be shared outside the context of
-          the application. Hence, this data is considered as internal-only
-          information.
-        </p>
-        <p class="text-justify">
-          Driver's savings account is used to receive his corresponding payment
-          for the service provided, less application's commission. Neither the
-          application, nor the users, nor any third parties have access to this
-          information, only driver. Application only ensures this data remains
-          secure and intact. Due to the serious damage that a possible leakage
-          of this information could cause to drivers and the company's
-          reputation, this data is considered as restricted.
-        </p>
-        <p class="text-justify">
-          Driver's car information is used by the application to validate the
-          vehicle credentials for security issues. For user confidence, they
-          will have access to this data to (1) recognize easily the vehicle
-          where he's going to ride, and (2) ensure he is on the right car. As
-          mentioned, application will also have access to this data for
-          validation purposes. Third- party elements can't see this information.
-          Driver expects this data will not be visible beyond the aforementioned
-          elements or outside the application context. Therefore, this data is
-          considered as internal-only information.
-        </p>
-
+          <p class="text-justify">
+            Users are aware that, in order to use our service, they must provide
+            three essential data: real- time geolocation, certain personal data
+            and a payment method.
+          </p>
+          <p class="text-justify">
+            User's real-time geolocation is visible for the driver that receives
+            the request, and the third- party navigation API; only while the
+            service is active. User have to accept his location data being
+            collected by the app to provide the drive-sharing service. The user
+            expects that his real-time location will not be visible beyond the
+            aforementioned elements or outside the application context.
+            Therefore this data is considered as Internal-only information.
+            User's personal data such as: name, phone number, or email, is
+            necessary for communication with the driver, customer service and
+            account creation. Both the driver and application have access to
+            this data, but not third-party elements. This is basic information
+            for service, yet the user expects that it will not be shared outside
+            the context of the application. Hence, this data is considered as
+            internal-only information.
+          </p>
+          <p class="text-justify">
+            User's payment method is used to pay both the driver and the
+            application's commission for the service. Neither the application,
+            nor the drivers, nor any third parties have access to this
+            information, only user. The application only ensures this data
+            remains secure and intact. Due to the serious damage that a possible
+            leakage of this information could cause to users and the company's
+            reputation, this data is considered as restricted.
+          </p>
+          <p class="text-justify">
+            Additionally, users will have the option of rating driver's service
+            to enhance the user experience and provide a driver assessment. This
+            data will be visible by others users when they request a ride to a
+            specific driver. This information is not considered sensitive, but
+            rather acts as an indicator of the driver's performance which is
+            helpful for users to have a good experience. Still, this should only
+            be shared within the context of the application. So, this data is
+            considered as internal-only.
+          </p>
+        </div>
+        <div class="paper-container">
+          <h5>Drivers</h5>
+          <p class="text-justify">
+            Drivers are aware that, in order to use our service, they must
+            provide three essential data: real- time geolocation, certain
+            personal data, savings account, and car information.
+          </p>
+          <p class="text-justify">
+            Driver's real-time geolocation is visible for the nearest users and
+            the third-party navigation API for navigation functionalities; only
+            when the service is active. Driver have to accept his location data
+            being collected by the app to provide the drive-sharing service. The
+            application will use third-party navigation functionalities to find
+            the shorter route between the user and the destiny, pick up user
+            wherever he is, and calculate route costs. Driver expects that his
+            real-time location will not be visible beyond the aforementioned
+            elements or outside the application context. Therefore this data is
+            considered as Internal-only information.
+          </p>
+          <p class="text-justify">
+            Driver's personal data such as: name, phone number, or email, is
+            necessary for communication with the user, service desk, and account
+            creation. Both the user and application have access to this data,
+            but not third-party elements. This is basic information for service,
+            yet the driver expects that it will not be shared outside the
+            context of the application. Hence, this data is considered as
+            internal-only information.
+          </p>
+          <p class="text-justify">
+            Driver's savings account is used to receive his corresponding
+            payment for the service provided, less application's commission.
+            Neither the application, nor the users, nor any third parties have
+            access to this information, only driver. Application only ensures
+            this data remains secure and intact. Due to the serious damage that
+            a possible leakage of this information could cause to drivers and
+            the company's reputation, this data is considered as restricted.
+          </p>
+          <p class="text-justify">
+            Driver's car information is used by the application to validate the
+            vehicle credentials for security issues. For user confidence, they
+            will have access to this data to (1) recognize easily the vehicle
+            where he's going to ride, and (2) ensure he is on the right car. As
+            mentioned, application will also have access to this data for
+            validation purposes. Third- party elements can't see this
+            information. Driver expects this data will not be visible beyond the
+            aforementioned elements or outside the application context.
+            Therefore, this data is considered as internal-only information.
+          </p>
+        </div>
         <h3>2. GOVERN-P (GV-P)</h3>
-
-        <p class="text-justify">
-          GV-P consists in developing and implementing the organizational
-          governance structure to enable an ongoing understanding of the
-          organization’s risk management priorities that are informed by privacy
-          risk. Within this step is the category Governance Policies, Processes,
-          and Procedures (GV.PO-P), where the policies, processes, and
-          procedures to manage and monitor the organization’s regulatory, legal,
-          risk, environmental, and operational requirements are understood and
-          inform the management of privacy risk.
-        </p>
-        <p class="text-justify">
-          Below are the legal requirements that apply to our business and that
-          must be followed to avoid fines and financial losses. Also,
-          considering we're handling credit information, we'll consider a
-          popular requirements guide called PCI DSS to help us improve security
-          measures on payment card data.
-        </p>
-
-        <h5>Data Protection Law</h5>
-        <p class="text-justify">
-          In 2021, the government of Ecuador published the new data protection
-          law. The law specifies some mandatory policies for any company that
-          handles personal data:
-        </p>
-        <p class="text-justify">
-          The processing of personal data carried out by third parties must be
-          regulated by a contract, in which it is clearly and precisely
-          established that the person in charge of the processing of personal
-          data will only process them according to the instructions of the
-          person in charge and that he/she will not use them for purposes other
-          than those indicated in the contract, nor will he/she transfer or
-          communicate them, not even for their conservation to other persons.
-        </p>
-        <p class="text-justify">
-          The person responsible for or in charge of the processing of personal
-          data must implement a process of verification, evaluation and
-          continuous and permanent assessment of the efficiency, efficacy and
-          effectiveness of the technical, organizational and any other type of
-          measures implemented with the purpose of guaranteeing and improving
-          the security of the processing of personal data. personal data.
-        </p>
-        <p class="text-justify">
-          The controller shall carry out an impact assessment of the processing
-          of personal data when it has identified the likelihood that such
-          processing, by its nature, context or purposes, involves a high risk
-          to the rights and freedoms of the data subject or when required by the
-          Personal Data Protection Authority, context or purposes, entails a
-          high risk to the rights and freedoms of the data subject or when the
-          Personal Data Protection Authority so requires.
-        </p>
-        <p class="text-justify">
-          The controller shall notify the personal data security breach to the
-          Personal Data Protection Authority and the Telecommunications
-          Regulation and Control Agency as soon as possible, and at the latest
-          within the term of the breach. Control of Telecommunications, as soon
-          as possible, and at the latest within five (5) days after becoming
-          aware of the five (5) days after becoming aware of it, unless it is
-          unlikely that such security breach constitutes a breach of personal
-          data. that such breach of security constitutes a risk to the rights
-          and freedoms of natural persons. natural persons. If the notification
-          to the Data Protection Authority does not take place within five (5)
-          days after the breach has come to the attention of the Data Protection
-          Authority (5) days, it shall be accompanied by an indication of the
-          reasons for the delay.
-        </p>
-
-        <h5>PCI DSS</h5>
-        <p class="text-justify">
-          The Payment Card Industry Data Security Standard (PCI DSS) is a set of
-          security requirements that can help small merchants to protect
-          customer card data located on payment cards. Since the customer uses a
-          card payment for the service, and the driver provides savings account
-          information, applying the guidelines and principles specified by this
-          standard will decrease the likelihood of a potential data breach. Not
-          only that, taking into account the sensitivity of this information,
-          PCI DSS will help us avoid financial losses, legal problems and stain
-          to our reputation.
-        </p>
-        <p class="text-justify">
-          These are some guidelines and requirements PCI DSS exposes to create a
-          safer payment system:
-        </p>
-        <p class="text-justify">
-          Understand your payment system. The application's payment page is the
-          form used to collect our customer’s payment card data after they have
-          decided to purchase the drive-sharing service. Handling of card data
-          may be 1) managed exclusively by the merchant using a shopping cart or
-          payment application, 2) partially managed by the merchant with the
-          support of a third party using a variety of methods, or 3) wholly
-          outsourced to a third party. Most times, using a wholly outsourced
-          third party is the safest option; and it is important to make sure
-          they are a PCI DSS validated third party.
-        </p>
-        <p class="text-justify">
-          Protect your business. Start protecting your business with these
-          security basics:
-        </p>
-        <p class="text-justify">
-          Use strong passwords and change default ones. (a) Is suggested to
-          change passwords every three months. (b) The most common passwords are
-          “password” and “123456.”
-        </p>
-        <p class="text-justify">
-          Hackers try easily-guessed passwords because they’re used by half of
-          all people. A strong password has seven or more characters and a
-          combination of upper and lower case letters, numbers, and symbols
-          (like !@#$&). A phrase can also be a strong password (and may be
-          easier to remember), like “B1gMac&frieS”. (c) Insist on each employee
-          having their own login IDs and passwords.
-        </p>
-        <p class="text-justify">
-          Protect card data and only store what you need. (a) The best way to
-          protect against data breaches is not to store card data at all.
-          Consider outsourcing your card processing to a PCI DSS compliant
-          service provider. (b) Securely destroy/shred card data you don’t need.
-          (c) Rather than accepting payment details via email, ask customers to
-          provide it via phone, fax, or regular mail.
-        </p>
-        <p class="text-justify">
-          Install patches from your vendors. (a) You may get patches from
-          vendors of your payment terminal, payment applications, other payment
-          systems (tills, cash registers, PCs, etc.), operating systems
-          (Android, Windows, iOS, etc.), application software (including your
-          web browser), and business software. Make sure your vendors update
-          your payment terminals, operating systems, etc. so they can support
-          the latest security patches. (b) Installing patches as soon as
-          possible is very important. Software can have flaws that are
-          discovered after release, caused by mistakes made by programmers when
-          they wrote the code. These flaws are also called security holes, bugs
-          or vulnerabilities. Hackers exploit these mistakes to break into your
-          computer and steal account data. Protect your systems by applying
-          vendor-supplied “patches” to fix coding errors. Timely installation of
-          security patches is crucial.
-        </p>
-        <p class="text-justify">
-          Use anti-virus software. (a) Hackers write viruses and other malicious
-          code to exploit software features and coding mistakes, so they can
-          break into your systems and steal card data. Using up-to-date
-          anti-virus (also called anti malware) software helps to protect your
-          systems. (b) Schedule regular full system scans, since your systems
-          may have been infected by new malware that was released before your
-          anti-virus software was able to detect it.
-        </p>
-        <p class="text-justify">
-          Make data useless to criminals. (a) Data is vulnerable when it travels
-          through internet, and when it’s kept or stored on your computers and
-          devices. The best way to keep it safe is to make it useless even if
-          it’s stolen by encrypting it whenever you store it or send it, and
-          removing it altogether when it’s not needed. (b) You should encrypt
-          all card data you store or send. Make sure your payment system is
-          using encryption and/or tokenization technology. If you are not sure,
-          ask them.
-        </p>
-        <p class="text-justify">
-          Protect the business from the internet. (a) The Internet is the main
-          highway used by data thieves to attack and steal your customers’ card
-          data. For this reason, if your business is on the Internet, anything
-          you use for card payments needs extra protection. A firewall is
-          equipment or software that sits between your payment system and the
-          Internet. It acts as a barrier to keep traffic out of your network and
-          systems that you don’t want and didn’t authorize. Firewalls are
-          configured (in hardware, software, or both) with specific criteria to
-          block or prevent unauthorized access to a network. A properly
-          configured firewall acts as a buffer to keep hackers and malicious
-          software from getting access to your payment systems, your e-commerce
-          website, and/or your card data. Check with your payment terminal
-          vendor or service provider to make sure you have one and ask them for
-          help configuring it correctly.
-        </p>
+        <div class="paper-container">
+          <p class="text-justify">
+            GV-P consists in developing and implementing the organizational
+            governance structure to enable an ongoing understanding of the
+            organization’s risk management priorities that are informed by
+            privacy risk. Within this step is the category Governance Policies,
+            Processes, and Procedures (GV.PO-P), where the policies, processes,
+            and procedures to manage and monitor the organization’s regulatory,
+            legal, risk, environmental, and operational requirements are
+            understood and inform the management of privacy risk.
+          </p>
+          <p class="text-justify">
+            Below are the legal requirements that apply to our business and that
+            must be followed to avoid fines and financial losses. Also,
+            considering we're handling credit information, we'll consider a
+            popular requirements guide called PCI DSS to help us improve
+            security measures on payment card data.
+          </p>
+        </div>
+        <div class="paper-container">
+          <h5>Data Protection Law</h5>
+          <p class="text-justify">
+            In 2021, the government of Ecuador published the new data protection
+            law. The law specifies some mandatory policies for any company that
+            handles personal data:
+          </p>
+          <p class="text-justify">
+            The processing of personal data carried out by third parties must be
+            regulated by a contract, in which it is clearly and precisely
+            established that the person in charge of the processing of personal
+            data will only process them according to the instructions of the
+            person in charge and that he/she will not use them for purposes
+            other than those indicated in the contract, nor will he/she transfer
+            or communicate them, not even for their conservation to other
+            persons.
+          </p>
+          <p class="text-justify">
+            The person responsible for or in charge of the processing of
+            personal data must implement a process of verification, evaluation
+            and continuous and permanent assessment of the efficiency, efficacy
+            and effectiveness of the technical, organizational and any other
+            type of measures implemented with the purpose of guaranteeing and
+            improving the security of the processing of personal data. personal
+            data.
+          </p>
+          <p class="text-justify">
+            The controller shall carry out an impact assessment of the
+            processing of personal data when it has identified the likelihood
+            that such processing, by its nature, context or purposes, involves a
+            high risk to the rights and freedoms of the data subject or when
+            required by the Personal Data Protection Authority, context or
+            purposes, entails a high risk to the rights and freedoms of the data
+            subject or when the Personal Data Protection Authority so requires.
+          </p>
+          <p class="text-justify">
+            The controller shall notify the personal data security breach to the
+            Personal Data Protection Authority and the Telecommunications
+            Regulation and Control Agency as soon as possible, and at the latest
+            within the term of the breach. Control of Telecommunications, as
+            soon as possible, and at the latest within five (5) days after
+            becoming aware of the five (5) days after becoming aware of it,
+            unless it is unlikely that such security breach constitutes a breach
+            of personal data. that such breach of security constitutes a risk to
+            the rights and freedoms of natural persons. natural persons. If the
+            notification to the Data Protection Authority does not take place
+            within five (5) days after the breach has come to the attention of
+            the Data Protection Authority (5) days, it shall be accompanied by
+            an indication of the reasons for the delay.
+          </p>
+        </div>
+        <div class="paper-container">
+          <h5>PCI DSS</h5>
+          <p class="text-justify">
+            The Payment Card Industry Data Security Standard (PCI DSS) is a set
+            of security requirements that can help small merchants to protect
+            customer card data located on payment cards. Since the customer uses
+            a card payment for the service, and the driver provides savings
+            account information, applying the guidelines and principles
+            specified by this standard will decrease the likelihood of a
+            potential data breach. Not only that, taking into account the
+            sensitivity of this information, PCI DSS will help us avoid
+            financial losses, legal problems and stain to our reputation.
+          </p>
+          <p class="text-justify">
+            These are some guidelines and requirements PCI DSS exposes to create
+            a safer payment system:
+          </p>
+          <p class="text-justify">
+            Understand your payment system. The application's payment page is
+            the form used to collect our customer’s payment card data after they
+            have decided to purchase the drive-sharing service. Handling of card
+            data may be 1) managed exclusively by the merchant using a shopping
+            cart or payment application, 2) partially managed by the merchant
+            with the support of a third party using a variety of methods, or 3)
+            wholly outsourced to a third party. Most times, using a wholly
+            outsourced third party is the safest option; and it is important to
+            make sure they are a PCI DSS validated third party.
+          </p>
+          <p class="text-justify">
+            Protect your business. Start protecting your business with these
+            security basics:
+          </p>
+          <p class="text-justify">
+            Use strong passwords and change default ones. (a) Is suggested to
+            change passwords every three months. (b) The most common passwords
+            are “password” and “123456.”
+          </p>
+          <p class="text-justify">
+            Hackers try easily-guessed passwords because they’re used by half of
+            all people. A strong password has seven or more characters and a
+            combination of upper and lower case letters, numbers, and symbols
+            (like !@#$&). A phrase can also be a strong password (and may be
+            easier to remember), like “B1gMac&frieS”. (c) Insist on each
+            employee having their own login IDs and passwords.
+          </p>
+          <p class="text-justify">
+            Protect card data and only store what you need. (a) The best way to
+            protect against data breaches is not to store card data at all.
+            Consider outsourcing your card processing to a PCI DSS compliant
+            service provider. (b) Securely destroy/shred card data you don’t
+            need. (c) Rather than accepting payment details via email, ask
+            customers to provide it via phone, fax, or regular mail.
+          </p>
+          <p class="text-justify">
+            Install patches from your vendors. (a) You may get patches from
+            vendors of your payment terminal, payment applications, other
+            payment systems (tills, cash registers, PCs, etc.), operating
+            systems (Android, Windows, iOS, etc.), application software
+            (including your web browser), and business software. Make sure your
+            vendors update your payment terminals, operating systems, etc. so
+            they can support the latest security patches. (b) Installing patches
+            as soon as possible is very important. Software can have flaws that
+            are discovered after release, caused by mistakes made by programmers
+            when they wrote the code. These flaws are also called security
+            holes, bugs or vulnerabilities. Hackers exploit these mistakes to
+            break into your computer and steal account data. Protect your
+            systems by applying vendor-supplied “patches” to fix coding errors.
+            Timely installation of security patches is crucial.
+          </p>
+          <p class="text-justify">
+            Use anti-virus software. (a) Hackers write viruses and other
+            malicious code to exploit software features and coding mistakes, so
+            they can break into your systems and steal card data. Using
+            up-to-date anti-virus (also called anti malware) software helps to
+            protect your systems. (b) Schedule regular full system scans, since
+            your systems may have been infected by new malware that was released
+            before your anti-virus software was able to detect it.
+          </p>
+          <p class="text-justify">
+            Make data useless to criminals. (a) Data is vulnerable when it
+            travels through internet, and when it’s kept or stored on your
+            computers and devices. The best way to keep it safe is to make it
+            useless even if it’s stolen by encrypting it whenever you store it
+            or send it, and removing it altogether when it’s not needed. (b) You
+            should encrypt all card data you store or send. Make sure your
+            payment system is using encryption and/or tokenization technology.
+            If you are not sure, ask them.
+          </p>
+          <p class="text-justify">
+            Protect the business from the internet. (a) The Internet is the main
+            highway used by data thieves to attack and steal your customers’
+            card data. For this reason, if your business is on the Internet,
+            anything you use for card payments needs extra protection. A
+            firewall is equipment or software that sits between your payment
+            system and the Internet. It acts as a barrier to keep traffic out of
+            your network and systems that you don’t want and didn’t authorize.
+            Firewalls are configured (in hardware, software, or both) with
+            specific criteria to block or prevent unauthorized access to a
+            network. A properly configured firewall acts as a buffer to keep
+            hackers and malicious software from getting access to your payment
+            systems, your e-commerce website, and/or your card data. Check with
+            your payment terminal vendor or service provider to make sure you
+            have one and ask them for help configuring it correctly.
+          </p>
+        </div>
 
         <h3>3.CONTROL-P (CT-P)</h3>
-        <p class="text-justify">
-          CT-P step consists in developing and implementing appropriate
-          activities to enable organizations or individuals to manage data with
-          sufficient granularity to manage privacy risks. Considering the
-          regulations of the Ecuadorian territory, and the guidelines provided
-          by PCI DSS, the following controls, procedures and policies will be
-          applied in the application:
-        </p>
-        <p class="text-justify">
-          Terms and conditions document that the user must accept at the moment
-          he creates an account in order to use the service, and, consequently,
-          to allow the collection of essential data for the operation of the
-          drive-sharing service (CT.PO-P1, CT.PO-P2). Enabling user's account
-          data preferences, configurations and the right to remove his data
-          through application functionalities (CT.PO-P3).
-        </p>
-        <p class="text-justify">
-          Implement an authentication method for users and drivers using an
-          email and a password. This will allow them to create an account on the
-          application and access to the service. Allow Two-Factor Authentication
-          option for users and drivers account to enhance privacy. Strong
-          password policy for account creation process. Password must have at
-          least 7 characters, one letter in upper case, one letter in under
-          case, one number, and one special character.
-        </p>
-        <p class="text-justify">
-          Use AES encryption for the transmission of the payment made by the
-          user to the driver and the application. Deploy a Web Application
-          Firewall (WAF) on the server side to avoid attacks such as Cross-Site
-          Scripting (XSS), SQL injections, or Denial of Service (DoS).
-        </p>
-        <p class="text-justify">
-          Separation of duties (SoD) principle as intern control on the
-          business. SoD is the principle that no user should be given enough
-          privileges to misuse the system on their own. This will prevent fraud,
-          errors, and other types of financial misconduct by ensuring that no
-          single employee or team has complete control over a business process
-          or function (CT.DP-P). Antivirus Software at the server and network
-          level to protect either the server and network from malware that may
-          come from the internet.
-        </p>
-        <p class="text-justify">
-          Password update policy for the employees working on the business. They
-          must update their password every three months for security issues.
-        </p>
-        <p class="text-justify">
-          Perform an audit and evaluation of the company's controls, policies
-          and procedures every six months to find points of improvement and
-          strengthening of security.
-        </p>
-        <p class="text-justify">
-          Apply hashing for account passwords stored in the business database.
-          Hashing passwords provides defense against passwords being compromised
-          when a database has been compromised. It does this in two ways, 1) it
-          hides the users passwords by making it computationally impossible to
-          get the password from the hash, and 2) It can slow down the generation
-          of rainbow tables for lookup against known passwords. Least privilege
-          (PoLP) as a system and employee intern control on the business. PoLP
-          is the principle that a security architecture should be designed so
-          that each entity is granted the minimum system resources and
-          authorizations that the entity needs to perform its function. PoLP
-          will reduce the attack surface and attacks such as privilege
-          escalation when a employee, user, or driver account, or even the
-          system, is compromised (CT.DP-P). Incident Response Plan (IRP) is a
-          written document, formally approved by the senior leadership team,
-          that will help our business before, during, and after a confirmed or
-          suspected security incident. This procedure is essential, because it
-          is inevitable that at some point a security incident will occur in the
-          business. IRP will clarify roles and responsibilities and will provide
-          guidance on key activities.
-        </p>
+        <div class="paper-container">
+          <p class="text-justify">
+            CT-P step consists in developing and implementing appropriate
+            activities to enable organizations or individuals to manage data
+            with sufficient granularity to manage privacy risks. Considering the
+            regulations of the Ecuadorian territory, and the guidelines provided
+            by PCI DSS, the following controls, procedures and policies will be
+            applied in the application:
+          </p>
+          <p class="text-justify">
+            Terms and conditions document that the user must accept at the
+            moment he creates an account in order to use the service, and,
+            consequently, to allow the collection of essential data for the
+            operation of the drive-sharing service (CT.PO-P1, CT.PO-P2).
+            Enabling user's account data preferences, configurations and the
+            right to remove his data through application functionalities
+            (CT.PO-P3).
+          </p>
+          <p class="text-justify">
+            Implement an authentication method for users and drivers using an
+            email and a password. This will allow them to create an account on
+            the application and access to the service. Allow Two-Factor
+            Authentication option for users and drivers account to enhance
+            privacy. Strong password policy for account creation process.
+            Password must have at least 7 characters, one letter in upper case,
+            one letter in under case, one number, and one special character.
+          </p>
+          <p class="text-justify">
+            Use AES encryption for the transmission of the payment made by the
+            user to the driver and the application. Deploy a Web Application
+            Firewall (WAF) on the server side to avoid attacks such as
+            Cross-Site Scripting (XSS), SQL injections, or Denial of Service
+            (DoS).
+          </p>
+          <p class="text-justify">
+            Separation of duties (SoD) principle as intern control on the
+            business. SoD is the principle that no user should be given enough
+            privileges to misuse the system on their own. This will prevent
+            fraud, errors, and other types of financial misconduct by ensuring
+            that no single employee or team has complete control over a business
+            process or function (CT.DP-P). Antivirus Software at the server and
+            network level to protect either the server and network from malware
+            that may come from the internet.
+          </p>
+          <p class="text-justify">
+            Password update policy for the employees working on the business.
+            They must update their password every three months for security
+            issues.
+          </p>
+          <p class="text-justify">
+            Perform an audit and evaluation of the company's controls, policies
+            and procedures every six months to find points of improvement and
+            strengthening of security.
+          </p>
+          <p class="text-justify">
+            Apply hashing for account passwords stored in the business database.
+            Hashing passwords provides defense against passwords being
+            compromised when a database has been compromised. It does this in
+            two ways, 1) it hides the users passwords by making it
+            computationally impossible to get the password from the hash, and 2)
+            It can slow down the generation of rainbow tables for lookup against
+            known passwords. Least privilege (PoLP) as a system and employee
+            intern control on the business. PoLP is the principle that a
+            security architecture should be designed so that each entity is
+            granted the minimum system resources and authorizations that the
+            entity needs to perform its function. PoLP will reduce the attack
+            surface and attacks such as privilege escalation when a employee,
+            user, or driver account, or even the system, is compromised
+            (CT.DP-P). Incident Response Plan (IRP) is a written document,
+            formally approved by the senior leadership team, that will help our
+            business before, during, and after a confirmed or suspected security
+            incident. This procedure is essential, because it is inevitable that
+            at some point a security incident will occur in the business. IRP
+            will clarify roles and responsibilities and will provide guidance on
+            key activities.
+          </p>
+        </div>
       </div>
     </div>
     <!-- Link Bootstrap JS-->
