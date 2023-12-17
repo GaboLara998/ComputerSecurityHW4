@@ -34,9 +34,14 @@
         <li class="nav-item">
           <a class="nav-link" href="#Pentesting">Pentesting</a>
         </li>
-        <li style="opacity: 0;">___________</li>
+        <li style="opacity: 0">___________</li>
         <li class="nav-item">
-          <a class="nav-link" href="#RepeatingPentesting">Repeating Pentesting</a>
+          <a class="nav-link" href="#LooseningUp">Loosening Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#RepeatingPentesting"
+            >Repeating Pentesting</a
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#Ethical">Ethical</a>
@@ -1575,11 +1580,440 @@
           Part 2: Your drive sharing company has decided to sell users data to
           advertisers.
         </h1>
-        
+
+        <div id="LooseningUp">
+          <h1 class="my-4 text-center">Loosening Up</h1>
+          <div class="paper-container">
+            <p class="justify-text">
+              The problem when a system is designed, is that the information is
+              not defined to be distributed to third-party organizations. Then,
+              the point to share information with another company would imply to
+              loosen up the user information. In one way, although it could be
+              an issue, the database could be a shared space with another
+              enterprises.
+            </p>
+
+            <img
+              src="resources/Block-Diagram-shared-data.svg"
+              class="rounded mx-auto d-block max-width"
+              alt="---dasd"
+            />
+            <p class="text-center figure-anotation my-0">
+              Figure x: Main system diagram, with shared data sections.
+            </p>
+            <p class="text-center figure-anotation my-0">Source: StarUML</p>
+
+            <p class="justify-text">
+              In that case, the point is to define some of the storage sections
+              in control of other companies. In that way, the information would
+              be allowed to another company to access the information.
+              Consequently, the information would be available to the
+              advertisers directly.
+            </p>
+            <p class="justify-text">
+              If we consider that the information is available to another users,
+              advertisers could have the next type of information from the users
+              registered in the app (this applies for clients and drivers):
+            </p>
+            <ul>
+              <li>The phone number</li>
+              <li>
+                Logs to define the frequency of the use of the application
+              </li>
+              <li>Data about the rides requested, the hour and place also</li>
+              <li>IP address</li>
+              <li>Operating system and browser data</li>
+              <li>App version</li>
+              <li>Language and time zone</li>
+              <li>Driver ratings given (by clients)</li>
+              <li>Transport type requested and frequency of it (by clients)</li>
+              <li>Money amount spent in a day and month</li>
+            </ul>
+
+            <p class="justify-text">
+              However, there could be in the sections a different modification
+              also. This means that the addition of other components could be
+              essential to provide advertisers an exclusive access to data of
+              users.
+            </p>
+            <ul>
+              <li class="justify-text">
+                <strong>Advertising Integration Module:</strong> Applied for the
+                database. This module should provide an interface for
+                advertisers to access relevant user data, but mainly the
+                personal data and frequent geographical locations (for the
+                behavior insights).
+              </li>
+              <li class="justify-text">
+                <strong>User Consent Management:</strong> Linked with the user
+                profiles and their privacy settings. This should be a framework
+                to let users share part of their data, but mainly some of the
+                data like personal data and behavior insights mainly. Some other
+                elements like money spent and transport type requested should be
+                considered as allowed to advertisers.
+              </li>
+              <li class="justify-text">
+                <strong>Report and Analytics Interface:</strong> In the
+                Analytics section applied. This should include reporting and
+                analytics interfaces, presenting non-identifiable and aggregated
+                user data for campaign performance analysis and targeting
+                purposes.
+              </li>
+            </ul>
+          </div>
+          <div class="paper-container">
+            <h5>
+              If we can consider also to modify the privacy system, we could
+              have some details and principles to recreate:
+            </h5>
+            <p class="justify-text">
+              <strong>Transparency and consent:</strong> Update the terms and
+              conditions of the app, to explicitly inform the users in the app
+              that part or all the information, for sharing and selling data,
+              will be shared with advertisers. Clear details about the types of
+              information, which implies personal data, will be shared with
+              advertisers and related to improved the experience for the users,
+              and there will be new settings available to let each user to
+              manage his/her preferences about this topic.
+            </p>
+            <p class="justify-text">
+              <strong>Data rights and controls:</strong> enhance the user
+              management to include control over a specific group of information
+              to share with other companies. Users should have the ability to
+              accept or decline the share of information for target advertising
+              and data sharing practices.
+            </p>
+            <p class="justify-text">
+              <strong>Protection and security:</strong> It is important to
+              ensure robust data protection and security measure, like a
+              stronger firewall, as the sensivity of sharing user information
+              with third parties increases.
+            </p>
+            <p class="justify-text">
+              <strong>Privacy impact assessments:</strong> Evaluate the
+              potential risks ands implications of sharing user information with
+              other companies. This process will be useful to identify and
+              mitigate privacy risks while demonstrating a commitment to
+              responsible data use.
+            </p>
+            <p class="justify-text">
+              <strong>Legal Compliance:</strong> Ensure data sharing complies
+              with applicable data protection regulations and privacy laws,
+              applied mainly in Ecuador and other important jurisdictions. This
+              can mean to get explicit consent of users.
+            </p>
+            <p class="justify-text">
+              <strong>User empowerment:</strong> Provide users with clear and
+              accessible mechanisms to access and manage shared information.
+              This is applied to respect user rights and preferences, regarding
+              the use of their personal data.
+            </p>
+            <p class="justify-text">
+              <strong>Ethical Consideration:</strong> Consider the ethical
+              implications of sharing and selling user information. Consider
+              additionally to adopt industry best practices and ethical
+              guidelines for targeted advertising and data sharing to maintain
+              trust with users and stakeholders.
+            </p>
+          </div>
+        </div>
+
         <div id="RepeatingPentesting">
           <h1 class="my-4 text-center">Repeating Pentesting</h1>
+          <div class="paper-container">
+            <p class="justify-text">
+              As our drive-sharing company decides to sell user data to
+              advertisers, it's crucial to reevaluate our privacy and security
+              measures. Using Imperva's penetration testing framework, we will
+              evaluate the new risks introduced by this change and identify
+              vulnerabilities that could lead to data breaches affecting not
+              only app users, but drivers as well.
+            </p>
+            <p class="justify-text">
+              Therefore, for this analysis they will be based on regulations
+              from The Council of the European Union, the General Data
+              Protection Regulation (GDPR) this is a legislation to replace the
+              Data Protection Directive. This has important repercussions for
+              organizations dealing with personal data. In addition to enforcing
+              one implementation for all EU member states and any organizations
+              operating in them, it introduces substantial fines for violations.
+            </p>
+            <p class="justify-text">
+              Within this regulatory framework, certain privacy patterns are
+              fundamental to compliance and ethical data management. These
+              patterns, categorized into creation, maintenance, and upholding,
+              form the backbone of our revised privacy strategy. They ensure not
+              only adherence to European Union laws but also reinforce our
+              commitment to protecting the personal data of our users and
+              drivers.
+            </p>
+          </div>
+          <div class="paper-container">
+            <h5>CREATE</h5>
+            <ul>
+              <li>
+                <p class="justify-text">
+                  <strong>Creating Privacy Policy:</strong>Develop a legal
+                  document that clearly outlines privacy risks and the steps
+                  taken to mitigate them. For example, detailing how user data
+                  will be anonymized before being shared with advertisers.
+                </p>
+              </li>
+              <li>
+                <p class="justify-text">
+                  <strong>Fair Information Practices: </strong>Implement
+                  principles like notice, choice, access, and integrity to
+                  ensure transparency and user control over personal data,
+                  aligning with FTC guidelines.
+                </p>
+              </li>
+              <li>
+                <p class="justify-text">
+                  <strong>Respecting Social Organizations: </strong> Involve
+                  users in privacy policy creation through surveys or feedback
+                  sessions to better understand their privacy concerns and
+                  expectations.
+                </p>
+              </li>
+            </ul>
+
+            <h5>MAINTAIN</h5>
+            <ul>
+              <li>
+                <p class="justify-text">
+                  <strong>Appropriate Privacy Feedback:</strong>Set up
+                  mechanisms like periodic privacy statements or alerts to
+                  inform users about data usage and collection practices.
+                </p>
+              </li>
+              <li>
+                <p class="justify-text">
+                  <strong>Maintaining Privacy Policy: </strong>Regularly review
+                  and update privacy policies to reflect changes in data
+                  handling practices or legal requirements.
+                </p>
+              </li>
+              <li>
+                <p class="justify-text">
+                  <strong>Privacy Management System:</strong>Implement a system
+                  where users can personalize their privacy settings, like
+                  choosing what data can be shared and opting out of certain
+                  data uses.
+                </p>
+              </li>
+            </ul>
+
+            <h5>UPHOLD</h5>
+            <ul>
+              <li>
+                <p class="justify-text">
+                  <strong>Usage Control Infrastructure:</strong> Employ systems
+                  that track data flow and enforce policies on how data is used
+                  and shared, including real-time monitoring tools.
+                </p>
+              </li>
+              <li>
+                <p class="justify-text">
+                  <strong>Distributed Usage Control: </strong>Implement controls
+                  that maintain data usage rules across various systems,
+                  ensuring consistent privacy protection even in complex
+                  environments.
+                </p>
+              </li>
+              <li>
+                <p class="justify-text">
+                  <strong>Sticky Policies: </strong>Ensure that data shared with
+                  third parties adhere to the privacy policies under which they
+                  were collected, using contractual agreements and regular
+                  audits to prevent violations.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="paper-container">
+            <p class="justify-text">
+              Likewise, for the pentesting analysis we will use the Imperva
+              Penetration testing framework, so that it is also related to the
+              data laws and regulations of the European Union (GDPR).
+            </p>
+            <img
+              src="resources/Imperva´s-framework.jpeg"
+              class="rounded mx-auto d-block max-width threefifty-height"
+              alt="--lias"
+            />
+            <p class="text-center figure-anotation my-0">
+              Figure 10: Imperva's Penetration Testing Framework.
+            </p>
+
+            <h6>1. Planning and Reconnaissance:</h6>
+            <p>
+              Include systems that manage data sharing with advertisers. Assess
+              how user consent is obtained and managed, in line with GDPR
+              requirements.
+            </p>
+
+            <h6>2. Scanning:</h6>
+            <p>
+              Identify vulnerabilities in systems handling user and driver data
+              for advertisers. Check API endpoints for compliance with GDPR's
+              data protection principles.
+            </p>
+
+            <h6>3. Gaining Access:</h6>
+            <p>
+              Test for GDPR compliance in access controls and data processing
+              methods. Simulate attacks to evaluate the robustness of systems
+              against unauthorized data access.
+            </p>
+
+            <h6>4. Maintaining Access:</h6>
+            <p>
+              Examine the potential for sustained unauthorized access, a
+              significant concern under GDPR. Assess systems' capabilities to
+              detect and respond to prolonged breaches.
+            </p>
+
+            <h6>5. Analysis:</h6>
+            <p>
+              Evaluate the impact of breaches on GDPR compliance, particularly
+              in terms of data sensitivity and unauthorized third-party access.
+            </p>
+          </div>
+
+          <div class="paper-container">
+            <h5>Strategies by Data Subject, Controller, and Authority</h5>
+            <p class="justify-text">
+              A subject control their personal data through the controller, who
+              informs them about that data. The controller is involved in all
+              strategies, including enforcing policies on any processors, also
+              represented as the controller. It demonstrates compliance to the
+              authority and applies data-oriented privacy risk mitigation
+              strategies. These interactions are somewhat cyclic, as only the
+              controller and or processor use them.
+            </p>
+            <img
+              src="resources/Strategies-by-Data-Subject-Controller-and-Authority.jpeg"
+              class="rounded mx-auto d-block max-width threefifty-height"
+              alt="--lias"
+            />
+            <p class="text-center figure-anotation my-0">
+              Figure 11: Strategies by data protection legislation actors.
+            </p>
+          </div>
+
+          <div class="paper-container">
+            <h5>Reduce Probability of Violation</h5>
+            <p class="justify-text">
+              <strong>Hide:</strong> This strategy involves techniques like data
+              anonymization to prevent unauthorized parties from seeing or
+              accessing personal data.
+            </p>
+            <p class="justify-text">
+              <strong>Separate:</strong> This strategy is about keeping personal
+              data compartmentalized to prevent aggregation that could lead to
+              privacy breaches.
+            </p>
+          </div>
+          <div class="paper-container">
+            <h5>Reduce Impact of Violation</h5>
+            <p class="justify-text">
+              <strong>Abstract:</strong> By presenting data in less detailed
+              forms, such as aggregates or summaries, the strategy lessens the
+              potential harm of data exposure.
+            </p>
+            <p class="justify-text">
+              <strong>Minimize:</strong> This ensures that only the necessary
+              data for a specific purpose is used, reducing the amount of data
+              that could be compromised.
+            </p>
+          </div>
+
+          <div class="paper-container">
+            <h5>Authority-Controller-Subject Interactions:</h5>
+            <p class="justify-text">
+              <strong>Demonstrate:</strong> The controller shows the authority
+              that they are following the rules through audits and logs,
+              ensuring accountability.
+            </p>
+            <p class="justify-text">
+              <strong>Enforce:</strong> The controller applies policies and
+              controls to process personal data, upholding privacy standards.
+            </p>
+            <p class="justify-text">
+              <strong>Inform:</strong> The subject is kept informed about their
+              data, enhancing transparency.
+            </p>
+            <p class="justify-text">
+              <strong>Control:</strong> The subject has control over their data,
+              including consent and data management.
+            </p>
+          </div>
+
+          <div class="paper-container">
+            <h5>Risks Under the Role of User:</h5>
+            <p class="justify-text">
+              <strong>Unauthorized Access to Sensitive Data:</strong> GDPR
+              categorizes certain data as sensitive. If an attacker gains user
+              access, they could potentially obtain information about travel
+              habits, personal preferences, and real-time location data.
+            </p>
+            <p class="justify-text">
+              <strong>Identity Theft (Phishing):</strong> Attackers could
+              deceive users into giving away their credentials, breaching the
+              GDPR’s principle of integrity and confidentiality.
+            </p>
+          </div>
+          <div class="paper-container">
+            <h5>Risks Under the Role of Administrator:</h5>
+            <p class="justify-text">
+              <strong>Mass Data Exfiltration:</strong> An attacker with
+              administrator privileges could extract vast amounts of data,
+              violating the GDPR’s data minimization principle.
+            </p>
+            <p class="justify-text">
+              <strong>Alteration of Privacy Controls:</strong> Malicious changes
+              to privacy settings could facilitate unauthorized access or
+              improper data processing.
+            </p>
+          </div>
+
+          <div class="paper-container">
+            <h5>Risks Under the Role of Developer:</h5>
+            <p class="justify-text">
+              <strong>Injection of Vulnerabilities:</strong> Developers may
+              intentionally introduce vulnerabilities that can later be
+              exploited to compromise the app.
+            </p>
+            <p class="justify-text">
+              <strong>Backdoors and Hidden Functionalities:</strong>
+              Implementing features that bypass normal security controls,
+              allowing future unauthorized access.
+            </p>
+          </div>
+
+          <div class="paper-container">
+            <h5>Methods of Attack to Provoke a Privacy Breach:</h5>
+            <p class="justify-text">
+              <strong>Brute Force and Password Spraying Attacks:</strong>
+              Repeated login attempts to guess passwords, which can violate GDPR
+              if it results in unauthorized access.
+            </p>
+            <p class="justify-text">
+              <strong>SQL Injection and Cross-Site Scripting (XSS):</strong>
+              These attacks aim to exploit vulnerabilities in the app to access
+              or manipulate data, potentially resulting in a GDPR violation due
+              to inadequate protection of personal data.
+            </p>
+            <p class="justify-text">
+              <strong>Phishing and Social Engineering:</strong> Tricking users
+              or employees into revealing credentials or confidential
+              information, which could lead to a lack of data integrity and
+              confidentiality.
+            </p>
+          </div>
         </div>
-        
+
         <div id="Ethical">
           <h1 class="my-4 text-center">Ethical Analysis</h1>
           <div class="paper-container">
@@ -1680,6 +2114,96 @@
                 </p>
               </li>
             </ul>
+          </div>
+          <h3>Consequences</h3>
+          <div class="paper-container">
+            <p class="justify-text">
+              Selling user data to advertisers involves a complex array of
+              ethical considerations. Ethically, such actions could be seen as a
+              breach of trust, as users typically do not expect their personal
+              information to be commoditized. This is particularly sensitive
+              when considering the principles of the GDPR, which prioritize user
+              privacy and control over personal data.
+            </p>
+          </div>
+
+          <div class="paper-container">
+            <h5>GDPR Compliance:</h5>
+            <p class="justify-text">
+              Legality of Processing: The GDPR requires data processing to be
+              lawful, fair, and transparent. The sale of data to advertisers
+              must be based on a clear legal basis, such as the explicit consent
+              of the users.
+            </p>
+            <p class="justify-text">
+              <strong>Principle of Minimization:</strong> The company should
+              only sell the data necessary for the agreed purpose, avoiding the
+              overexposure of personal data.
+            </p>
+            <p class="justify-text">
+              <strong>Right to be Forgotten:</strong> Users have the right to
+              request the deletion of their data, which should be feasible even
+              after the data has been shared with advertisers.
+            </p>
+            <p class="justify-text">
+              <strong>International Transfers:</strong> When selling data
+              outside the EU, the company must ensure that advertisers comply
+              with protections equivalent to those of the GDPR.
+            </p>
+          </div>
+
+          <div class="paper-container">
+            <h5>Ethical Obligations and Impact on Trust and Reputation:</h5>
+            <p class="justify-text">
+              In terms of trust and reputation, the way users and the public
+              perceive the company can be significantly affected. Compliance
+              with the GDPR and ethics in the management of personal data are
+              essential to maintain user trust. Privacy violations and data
+              misuse can lead to irreparable damage to a company's reputation
+              and significant GDPR penalties.
+            </p>
+            <p class="justify-text">
+              <strong>User Autonomy:</strong> Selling data can undermine user
+              autonomy, as users may not have real choice or control over how
+              their data is used, especially if consent is not obtained
+              transparently.
+            </p>
+            <p class="justify-text">
+              <strong>Data Misuse:</strong> There is also a risk that
+              advertisers will misuse data, resulting in unwanted or intrusive
+              targeting of people.
+            </p>
+            <p class="justify-text">
+              <strong>Discrimination:</strong> The potential for discriminatory
+              practices may occur if data is used to select or exclude
+              individuals from certain opportunities based on their data
+              profile, demographic location, etc.
+            </p>
+            <p class="justify-text">
+              <strong>Transparency and Consent:</strong> The principles of the
+              GDPR mandate that organizations collect data in a transparent
+              manner and with the explicit consent of individuals, solely for
+              specific, stated purposes. While not always mandatory, obtaining
+              consent is the preferred method, as it empowers customers with
+              actual oversight of their personal information.
+            </p>
+            <p class="justify-text">
+              <strong>Confidentiality and Anonymity:</strong> Customers often
+              participate in data collection under the assumption that their
+              information remains confidential. Organizations are advised to
+              avoid collecting personally identifiable information (PII)
+              whenever possible and to design data collection methods that
+              protect the anonymity of the people and users.
+            </p>
+            <p class="justify-text">
+              <strong>Purpose Limitation and Data Minimization:</strong> GDPR
+              supports the practice of purpose limitation, meaning organizations
+              should not collect data with the intention of using it for
+              undefined purposes at an undetermined point in the future. The
+              principle of minimum viable collection encourages only gathering
+              the data necessary to achieve the intended results or understand a
+              trend, reflecting the data minimization principle.
+            </p>
           </div>
         </div>
       </div>
